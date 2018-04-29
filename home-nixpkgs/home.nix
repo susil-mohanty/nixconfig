@@ -28,7 +28,7 @@
   # Fish config
   home.file.".config/fish/functions/fish_prompt.fish".source = ./dotfiles/fish/functions/fish_prompt.fish;
   home.file.".config/fish/functions/fish_right_prompt.fish".source = ./dotfiles/fish/functions/fish_right_prompt.fish;
-  home.file.".config/fish/functions/ipython.fish".source = ./dotfiles/fish/functions/ipython.fish;
+  # home.file.".config/fish/functions/ipython.fish".source = ./dotfiles/fish/functions/ipython.fish;
   home.file.".config/fish/functions/pcat.fish".source = ./dotfiles/fish/functions/pcat.fish;
   home.file.".config/fish/functions/pless.fish".source = ./dotfiles/fish/functions/pless.fish;
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
@@ -39,7 +39,7 @@
     enableSshSupport = true;
   };
 
-  home.sessionVariables.EDITOR = "emacs";
+  home.sessionVariables.EDITOR = "nvim";
   home.sessionVariables.LESS = "-R";
 
   programs.browserpass.enable = true;
@@ -47,6 +47,14 @@
   programs.neovim.enable = true;
   programs.emacs = {
     enable = true;
+
+    package = pkgs.emacs.overrideAttrs (old: rec {
+      wrapperPath = with pkgs.stdenv.lib; makeBinPath ([
+        pkgs.ispell # needed?
+        pkgs.plantuml
+        pkgs.jre  # plantum
+      ]);
+    });
 
     extraPackages = epkgs: [
       # (epkgs.melpaPackages.mocha.overrideAttrs(oldAttrs: {

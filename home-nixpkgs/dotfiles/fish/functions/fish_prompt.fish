@@ -8,30 +8,30 @@ function fish_prompt --description 'Display prompt'
     set PROMPT ''
 
     # Add User
-    set PROMPT $PROMPT(set_color -b 585858)(set_color bbbbbb)' '$USER' '
+    set PROMPT $PROMPT(set_color 888888)' '$USER' '
 
     # Add hostname
-    set PROMPT $PROMPT(set_color -b 444444)' '$__fish_prompt_hostname' '
+    set PROMPT $PROMPT(set_color 444444)' '$__fish_prompt_hostname' '
 
     # Add CWD (home|root) with colors
     switch (prompt_pwd)
         case '~*' # If in home, add a nice colored ~
-            set PROMPT $PROMPT(set_color -b 0087af)(set_color faf5e3)' ~ '
+            set PROMPT $PROMPT(set_color 0087af)' ~ '
 
         case '*' # If not in home, probably in or somewhere below /, add a nice colored /
-            set PROMPT $PROMPT(set_color -b afa700)(set_color faf5e3)' / '
+            set PROMPT $PROMPT(set_color afa700)' / '
     end
 
     # Add the rest of the CWD
     if test (prompt_pwd | sed -e 's/^~//' -e 's:/::g') != ''
-        set PROMPT $PROMPT(set_color -b 3a3a3a)(set_color bbbbbb)(prompt_pwd | sed -e 's/^~//' -e 's:/: :g')' '
+        set PROMPT $PROMPT(set_color 888888)(prompt_pwd | sed -e 's/^~//' -e 's:/: :g')' '
     end
 
     # Add colors depending on if previous command was successful or not
     if test $last_ret = 0
-        set PROMPT $PROMPT(set_color -b 5faf00)(set_color faf5e3)
+        set PROMPT $PROMPT(set_color --bold 689d6a)
     else
-        set PROMPT $PROMPT(set_color -b d7005f)(set_color faf5e3)
+        set PROMPT $PROMPT(set_color --bold cc241d)
     end
 
     # Add sign at end of prompt depending on user

@@ -1,3 +1,3 @@
 set -e fish_greeting
-set -gx EDITOR emacs
+set -gx EDITOR nvim
 set -gx LESS '-R'
