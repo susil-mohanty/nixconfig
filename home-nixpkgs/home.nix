@@ -4,7 +4,26 @@
   # Emacs config
   home.file.".spacemacs".source = ./dotfiles/emacs/spacemacs;
 
-  home.packages = with pkgs; [ ag ripgrep rxvt_unicode gmrun ];
+  home.packages = with pkgs; [
+    python3
+    chromium
+    feh
+    fira-code
+    fira-code-symbols
+    fira-mono
+    okular
+    pavucontrol
+    rxvt_unicode_with-plugins
+    sqlite
+    tdesktop
+    thefuck
+    wirelesstools
+    xclip
+    wgetpaste
+    ag
+    ripgrep
+    gmrun
+  ];
 
   # Fish config
   home.file.".config/fish/functions/fish_prompt.fish".source = ./dotfiles/fish/functions/fish_prompt.fish;
