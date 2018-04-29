@@ -4,7 +4,7 @@
   # Emacs config
   home.file.".spacemacs".source = ./dotfiles/emacs/spacemacs;
 
-  home.packages = with pkgs; [ ag ripgrep rxvt_unicode ];
+  home.packages = with pkgs; [ ag ripgrep rxvt_unicode gmrun ];
 
   # Fish config
   home.file.".config/fish/functions/fish_prompt.fish".source = ./dotfiles/fish/functions/fish_prompt.fish;
@@ -19,7 +19,7 @@
     enable = true;
     enableSshSupport = true;
   };
-  
+
   home.sessionVariables.EDITOR = "emacs";
   home.sessionVariables.LESS = "-R";
 
