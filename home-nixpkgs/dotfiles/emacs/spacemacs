@@ -70,7 +70,7 @@ This function should only modify configuration layer settings."
                                       direnv
                                       solidity-mode
                                       fish-mode
-                                      (mocha :location local)
+                                      mocha
                                       blacken
                                       indium
                                       vue-mode
@@ -461,7 +461,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (require 'mocha)
+  ;; (require 'mocha)
   ;; (defun my-pipenv-activate ()
   ;;    (unless python-shell-virtualenv-root
   ;;         (message "BEGIN PIPENV ACTIVATE")
