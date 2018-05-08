@@ -23,6 +23,7 @@
     ag
     ripgrep
     gmrun
+    gucharmap
   ];
 
   # X
@@ -41,6 +42,7 @@
 
   services.gpg-agent = {
     enable = true;
+    defaultCacheTtl = 36000;
     enableSshSupport = true;
   };
 
