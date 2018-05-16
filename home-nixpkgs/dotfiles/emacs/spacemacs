@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
      ;; python
      (python :variables python-backend 'lsp)
      (lsp :variables lsp-ui-doc-mode t)
-     javascript
+     (javascript :variables javascript-backend 'lsp)
      syntax-checking
      emacs-lisp
      git
@@ -74,6 +74,7 @@ This function should only modify configuration layer settings."
                                       blacken
                                       indium
                                       vue-mode
+                                      prettier-js
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -480,6 +481,7 @@ before packages are loaded."
   (setq projectile-enable-caching t)
   (setq js2-strict-missing-semi-warning nil)
   (setq mocha-debugger 'indium)
+  (setq tern-known-port 9999)
 
   (add-hook 'js-mode-hook #'indium-interaction-mode)
 

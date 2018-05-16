@@ -25,6 +25,8 @@
     gmrun
     gucharmap
     jetbrains.idea-ultimate
+    graphviz  # plantuml
+    zotero
   ];
 
   # X
