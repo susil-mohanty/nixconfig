@@ -1,11 +1,12 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Emacs config
-  home.file.".spacemacs".source = ./dotfiles/emacs/spacemacs;
+  # spacemacs config needs to be editable
+  home.file.".spacemacs".source = "${config.home.homeDirectory}/.nixpkgs/dotfiles/emacs/spacemacs";
 
   home.packages = with pkgs; [
-    python3
+
     chromium
     feh
     fira-code
@@ -27,6 +28,11 @@
     jetbrains.idea-ultimate
     graphviz  # plantuml
     zotero
+    (vscode-with-extensions.override {
+        vscodeExtensions = with vscode-extensions; [
+          ms-vscode.cpptools
+        ];
+      })
   ];
 
   # X
