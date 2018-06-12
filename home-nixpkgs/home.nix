@@ -33,6 +33,8 @@
           ms-vscode.cpptools
         ];
       })
+    # screenshot
+    spectacle
   ];
 
   # X
