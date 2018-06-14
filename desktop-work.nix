@@ -102,6 +102,7 @@
     fira-code
     dejavu_fonts
     iosevka
+    noto-fonts
   ];
 
   hardware.pulseaudio.enable = true;
