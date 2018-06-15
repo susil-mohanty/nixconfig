@@ -11,7 +11,7 @@ function fish_right_prompt --description 'Display right prompt'
     end
 
     if set -q VIRTUAL_ENV
-        set PROMPT (set_color faf5e3)" "(basename "$VIRTUAL_ENV")" "$PROMPT
+        set PROMPT (set_color 458588)" "(basename "$VIRTUAL_ENV")" "$PROMPT
     end
 
     builtin echo -ns $PROMPT(set_color normal)
