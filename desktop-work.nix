@@ -97,6 +97,10 @@
   services.compton.enable = true;
   services.resolved.enable = true;
 
+  # Gitlab CI
+  # services.gitlab-runner.enable = true;
+  # services.gitlab-runner.configFile = /home/lulu/.gitlab-runner/config.toml;
+
   fonts.fonts = with pkgs; [
     liberation_ttf
     fira-code

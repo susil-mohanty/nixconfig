@@ -35,6 +35,7 @@
       })
     # screenshot
     spectacle
+    nmap
   ];
 
   # X
