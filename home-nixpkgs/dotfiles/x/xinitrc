@@ -2,17 +2,12 @@
 
 if [ "$DISPLAY" ]; then
 
-    urxvtd -q -f -o
-
     if [ "$(hostname)" == "lulus" ]; then
         xrdb -merge .config/xresources_fira
     elif [ "$(hostname)" == "mathis-pc" ]; then
         xrdb -merge .config/xresources_fira
-    elif [ "$(hostname)" == "pad" ]; then
-        xrdb -merge base16-gruvbox-light-medium-256.Xresources
-        xrdb -merge .config/xresources_iosevka
-    elif [ "$(hostname)" == "mas" ]; then
-        xrdb -merge base16-gruvbox-light-medium-256.Xresources
+    else
+        xrdb -merge .config/base16-gruvbox-light-medium-256.Xresources
         xrdb -merge .config/xresources_iosevka
     fi
 
@@ -30,6 +25,9 @@ if [ "$DISPLAY" ]; then
     xset s off &
     xautolock -time 1 -locker slock -notify 30 &
     redshift -t 6500:2600 -l 22:114 &
+    feh --bg-fill space-wallpaper.jpg  > /dev/null 2>&1
+
+    urxvtd -q -f -o
 
     # dualhead
     if [ "$(xrandr | grep ' connected' | wc -l)" -eq 2 ]; then
