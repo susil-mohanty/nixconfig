@@ -61,9 +61,7 @@
      defaultLocale = "en_US.UTF-8";
   };
 
-  # time.timeZone = "Asia/Hong_Kong";
-  time.timeZone = "Europe/Zurich";
-
+  time.timeZone = "Asia/Hong_Kong";
 
   environment.systemPackages = with pkgs; [
     # nmon

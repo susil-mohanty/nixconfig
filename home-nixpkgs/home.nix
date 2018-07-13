@@ -39,6 +39,7 @@
     yubikey-personalization-gui
     urxvt_perls
     gnome3.nautilus
+    gthumb
     evince
     google-chrome
   ];
