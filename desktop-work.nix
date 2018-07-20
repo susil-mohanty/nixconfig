@@ -89,7 +89,7 @@
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
   programs.slock.enable = true;
 
-  # programs.fish.enable = true;
+  programs.fish.enable = true;
 
   services.openssh.enable = true;
   services.locate.enable = true;

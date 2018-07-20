@@ -42,6 +42,8 @@
     gthumb
     evince
     google-chrome
+    haskellPackages.xmobar
+    spotify
   ];
 
   # X
