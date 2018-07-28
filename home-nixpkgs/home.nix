@@ -74,8 +74,8 @@
   };
 
   services.redshift.enable = true;
-  services.redshift.latitude = "47";
-  services.redshift.longitude = "7";
+  services.redshift.latitude = "22";
+  services.redshift.longitude = "114";
 
   home.sessionVariables.EDITOR = "nvim";
   home.sessionVariables.LESS = "-R";

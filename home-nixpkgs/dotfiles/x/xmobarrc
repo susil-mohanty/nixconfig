@@ -53,8 +53,7 @@ Config {
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , "<total0> <total1> <total2> <total3> <total4> <total5> <total6> <total7>%"
-                             , "--Low"      , "50"         -- units: %
+        , Run MultiCpu       [ "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "-p"         , "3"
                              , "--low"      , "darkgreen"
@@ -63,8 +62,7 @@ Config {
                              ] 10
 
         -- cpu core temperature monitor
-        , Run CoreTemp       [ "--template" , "<core0> <core1> <core2> <core3>°C"
-                             , "--Low"      , "70"        -- units: °C
+        , Run CoreTemp       [ "--Low"      , "70"        -- units: °C
                              , "--High"     , "80"        -- units: °C
                              , "--low"      , "darkgreen"
                              , "--normal"   , "darkorange"
@@ -81,7 +79,7 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run BatteryP  ["BAT0", "BAT1"] 
+        , Run BatteryP  ["BAT0", "BAT1"]
 			     [ "--template" , "Batt: <left>% - <timeleft>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
