@@ -102,11 +102,10 @@
   # services.gitlab-runner.configFile = /home/lulu/.gitlab-runner/config.toml;
 
   fonts.fonts = with pkgs; [
-    liberation_ttf
     fira-code
-    dejavu_fonts
     iosevka
     noto-fonts
+    noto-fonts-cjk
   ];
 
   hardware.pulseaudio.enable = true;

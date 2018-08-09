@@ -13,3 +13,8 @@ ln -s /etc/nixos/nixpkgs ~/.nix-defexpr
 nix-shell ~/.nixpkgs/home-manager -A install
 home-manager switch
 ```
+
+### Todo
+- [ ] Entire git config with home manager.
+- [ ] Deterministic doom emacs setup.
+- [ ] Pinyin input.

@@ -44,6 +44,7 @@
     google-chrome
     haskellPackages.xmobar
     spotify
+    goldendict
   ];
 
   # X
@@ -114,6 +115,7 @@
     userEmail = "sveitser@gmail.com";
     signing.key = "0xB24B3D9AD2157945";
     signing.signByDefault = true;
+    ignores = [ ".projectile" ];
   };
 
   # manual.manpages.enable = false;
