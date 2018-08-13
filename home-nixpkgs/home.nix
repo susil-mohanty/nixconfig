@@ -6,7 +6,6 @@
   home.file.".spacemacs".source = "${config.home.homeDirectory}/.nixpkgs/dotfiles/emacs/spacemacs";
 
   home.packages = with pkgs; [
-
     chromium
     feh
     fira-code
@@ -27,17 +26,10 @@
     gucharmap
     jetbrains.idea-ultimate
     graphviz  # plantuml
-    zotero
-    (vscode-with-extensions.override {
-        vscodeExtensions = with vscode-extensions; [
-          ms-vscode.cpptools
-        ];
-      })
-    # screenshot
-    spectacle
+    flameshot
     nmap
-    yubikey-personalization-gui
     urxvt_perls
+    xsel  # for urxvt copy/paste
     gnome3.nautilus
     gthumb
     evince
