@@ -49,6 +49,23 @@
 
   # editors
   home.file.".config/nvim/init.vim".source = ./dotfiles/vim/init.vim;
+  home.file.".doom.d/init.el" = {
+    source = ./dotfiles/emacs/doom.init.el;
+    onChange = ''
+    cd ~/.emacs.d
+    nix-shell -p coreutils --run make
+    '';
+  };
+  # XXX make fails because this is in the nix store.
+  # home.file.".emacs.d" = {
+  #   source = pkgs.fetchFromGitHub {
+  #     owner = "hlissner";
+  #     repo = "doom-emacs";
+  #     rev = "f9b06bd3a84e7c9a4de95bca905b92d9aaadc2fd";
+  #     sha256 = "0bbky7naqng15zk055p7rmfp1541cz9rcz2mpk5kb0kvmmnzkkkc";
+  #   };
+  #   onChange = "cd ~/.emacs.d && nix-shell -p coreutils --run make";
+  # };
 
   # Fish config
   home.file.".config/fish/functions/fish_prompt.fish".source = ./dotfiles/fish/functions/fish_prompt.fish;
