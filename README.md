@@ -25,4 +25,4 @@ home-manager switch
 ### Todo
 - [ ] Entire git config with home manager.
 - [ ] Deterministic doom emacs setup.
-- [ ] Pinyin input.
+- [x] Pinyin input.
