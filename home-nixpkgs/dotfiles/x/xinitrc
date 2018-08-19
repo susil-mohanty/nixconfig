@@ -2,14 +2,8 @@
 
 if [ "$DISPLAY" ]; then
 
-    if [ "$(hostname)" == "lulus" ]; then
-        xrdb -merge .config/xresources_fira
-    elif [ "$(hostname)" == "mathis-pc" ]; then
-        xrdb -merge .config/xresources_fira
-    else
-        xrdb -merge .config/base16-gruvbox-light-medium-256.Xresources
-        xrdb -merge .config/xresources_iosevka
-    fi
+    xrdb -merge .config/base16-gruvbox-light-medium-256.Xresources
+    xrdb -merge .config/xresources_iosevka
 
     setxkbmap -option ctrl:backspace -variant colemak
     xset r rate 200 100
