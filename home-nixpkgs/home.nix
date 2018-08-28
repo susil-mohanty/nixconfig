@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let updateDoom  = ''
+  cd ~/.emacs.d
+  nix-shell -p coreutils --run make
+  '';
+in
 {
   # Emacs config
   # spacemacs config needs to be editable
@@ -51,17 +56,11 @@
   home.file.".config/nvim/init.vim".source = ./dotfiles/vim/init.vim;
   home.file.".doom.d/init.el" = {
     source = ./dotfiles/emacs/doom/init.el;
-    onChange = ''
-    cd ~/.emacs.d
-    nix-shell -p coreutils --run make
-    '';
+    onChange = updateDoom;
   };
   home.file.".doom.d/packages.el" = {
     source = ./dotfiles/emacs/doom/packages.el;
-    onChange = ''
-    cd ~/.emacs.d
-    nix-shell -p coreutils --run make
-    '';
+    onChange = updateDoom;
   };
   home.file.".doom.d/config.el".source = ./dotfiles/emacs/doom/config.el;
   # XXX make fails because this is in the nix store.
