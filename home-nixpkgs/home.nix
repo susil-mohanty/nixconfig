@@ -50,12 +50,20 @@
   # editors
   home.file.".config/nvim/init.vim".source = ./dotfiles/vim/init.vim;
   home.file.".doom.d/init.el" = {
-    source = ./dotfiles/emacs/doom.init.el;
+    source = ./dotfiles/emacs/doom/init.el;
     onChange = ''
     cd ~/.emacs.d
     nix-shell -p coreutils --run make
     '';
   };
+  home.file.".doom.d/packages.el" = {
+    source = ./dotfiles/emacs/doom/packages.el;
+    onChange = ''
+    cd ~/.emacs.d
+    nix-shell -p coreutils --run make
+    '';
+  };
+  home.file.".doom.d/config.el".source = ./dotfiles/emacs/doom/config.el;
   # XXX make fails because this is in the nix store.
   # home.file.".emacs.d" = {
   #   source = pkgs.fetchFromGitHub {
