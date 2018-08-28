@@ -116,13 +116,10 @@ in
         pkgs.plantuml
         pkgs.jre  # plantum
       ]);
+      postFixup = ''
+      wrapProgram $out/bin/emacs --set SHELL ${pkgs.bash}/bin/bash
+      '';
     });
-
-    extraPackages = epkgs: [
-      # (epkgs.melpaPackages.mocha.overrideAttrs(oldAttrs: {
-      #   patches = [ ./mocha-inspect.patch ];
-      # }))
-    ];
   };
 
   programs.git = {
