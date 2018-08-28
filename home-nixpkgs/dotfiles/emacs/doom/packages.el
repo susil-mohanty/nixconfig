@@ -5,5 +5,6 @@
 (package! indium)
 (package! flycheck-jest)
 (package! solidity-mode)
+(package! deadgrep)
 
 (use-package flycheck-jest)
