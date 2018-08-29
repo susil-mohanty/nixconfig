@@ -5,7 +5,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./pc-common.nix 
+      ./pc-common.nix
       ./vpn/pia-system.nix
     ];
 
@@ -30,5 +30,31 @@
 
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.gutenprint pkgs.brlaser ];
-  
+  services.printing.browsing = true;
+  services.printing.listenAddresses = [ "*:631" ];
+
+  networking.firewall.allowedTCPPorts = [ 631 11223 ];
+
+  services.jupyter.enable = true;
+  services.jupyter.group = "jupyter";
+  services.jupyter.kernels = {
+    python3 = let
+      env = (pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
+              ipykernel
+              pandas
+              pip
+              scikitlearn
+              tensorflowWithCuda
+              Keras
+            ]));
+    in {
+      displayName = "Python 3 for machine learning";
+      language = "python";
+      argv = [ "${env.interpreter}" "-m" "ipykernel_launcher" "-f" "{connection_file}" ];
+    };
+  };
+  services.jupyter.password = "open('/etc/nixos/jupyter.pwd', 'r', encoding='utf8').read().strip()";
+  services.jupyter.port = 11223;
+  services.jupyter.ip = "10.10.1.11";
+
 }

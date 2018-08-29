@@ -71,6 +71,7 @@ with builtins;
   services.resolved.enable = true;
 
   fonts.fonts = with pkgs; [
+    arphic-ukai
     fira-code
     iosevka
     noto-fonts
