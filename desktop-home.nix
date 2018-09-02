@@ -29,7 +29,11 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint pkgs.brlaser ];
+  services.printing.drivers = [
+    pkgs.gutenprint
+    pkgs.brlaser
+    pkgs.hll2390dw-cups
+  ];
   services.printing.browsing = true;
   services.printing.listenAddresses = [ "*:631" ];
 
