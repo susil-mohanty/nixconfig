@@ -6,5 +6,6 @@
 (package! flycheck-jest)
 (package! solidity-mode)
 (package! deadgrep)
+(package! ein)
 
 (use-package flycheck-jest)
