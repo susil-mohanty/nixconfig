@@ -4,7 +4,7 @@ source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 if [ "$DISPLAY" ]; then
 
-    xrdb -merge .config/base16-gruvbox-light-medium-256.Xresources
+    xrdb -merge .config/colortheme.Xresources
     xrdb -merge .config/xresources_iosevka
 
     xset r rate 200 100
