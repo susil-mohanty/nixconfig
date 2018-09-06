@@ -44,6 +44,8 @@ in
     goldendict
     # better cli tools
     exa # ls
+    ncdu
+    fd  # find
   ];
 
   # X
