@@ -91,23 +91,23 @@ with builtins;
      enable = true;
      xkbVariant = "colemak";
 
-     displayManager.sddm.autoLogin.enable = true;
-     displayManager.sddm.autoLogin.user = "lulu";
-     displayManager.sddm.enable = true;
+     displayManager.slim.enable = true;
+     displayManager.slim.autoLogin = true;
+     displayManager.slim.defaultUser = "lulu";
 
      desktopManager.xterm.enable = false;
      # desktopManager.plasma5.enable = true;
 
-     windowManager.xmonad = {
-       enable = true;
-       enableContribAndExtras = true;
-       extraPackages = haskellPackages: [
-         haskellPackages.xmonad-contrib
-         haskellPackages.xmonad-extras
-         # haskellPackages.xmonad
-       ];
-     };
-     windowManager.default = "xmonad";
+     # windowManager.xmonad = {
+     #   enable = true;
+     #   enableContribAndExtras = true;
+     #   extraPackages = haskellPackages: [
+     #     haskellPackages.xmonad-contrib
+     #     haskellPackages.xmonad-extras
+     #     # haskellPackages.xmonad
+     #   ];
+     # };
+     # windowManager.default = "xmonad";
 
      # windowManager.exwm = {
      #   enable = true;

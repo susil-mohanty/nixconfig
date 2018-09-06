@@ -80,10 +80,10 @@ in
   home.file.".config/fish/functions/fish_title.fish".source = ./dotfiles/fish/functions/fish_title.fish;
 
   home.file.".config/fish/functions/nix-ipython.fish".source = ./dotfiles/fish/functions/nix-ipython.fish;
-  home.file.".config/fish/functions/pcat.fish".source = ./dotfiles/fish/functions/pcat.fish;
+  # home.file.".config/fish/functions/pcat.fish".source = ./dotfiles/fish/functions/pcat.fish;
   home.file.".config/fish/functions/pless.fish".source = ./dotfiles/fish/functions/pless.fish;
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
-  home.file.".config/fish/config.fish".source = ./dotfiles/fish/config.fish;
+  # home.file.".config/fish/config.fish".source = ./dotfiles/fish/config.fish;
 
   services.gpg-agent = {
     enable = true;
@@ -96,7 +96,7 @@ in
   services.redshift.latitude = "22";
   services.redshift.longitude = "114";
 
-  home.sessionVariables.EDITOR = "nvim";
+  home.sessionVariables.EDITOR = "emacsclient";
   home.sessionVariables.LESS = "-R";
 
   programs.home-manager.enable = true;
@@ -130,7 +130,42 @@ in
     signing.signByDefault = true;
     ignores = [ ".projectile" ];
   };
+  programs.direnv.enable = true;
+  programs.fish = {
+    enable = true;
+    shellAliases = with pkgs; {
+      pcat = "${python3Packages.pygments}/bin/pygmentize";
+      ipython = let
+        pythonEnv = (python3.withPackages (ps: [
+          ps.ipython
+          ps.requests
+          ps.psutil
+        ]));
+      in "${pythonEnv}/bin/ipython";
+    };
+  };
 
+  xsession.enable = true;
+  xsession.windowManager.xmonad.enable = true;
+  xsession.windowManager.xmonad.enableContribAndExtras = true;
+
+  systemd.user.services.emacs-daemon = {
+     Unit = {
+       Description = "Emacs text editor";
+       Documentation = "info:emacs man:emacs(1) https://gnu.org/software/emacs/";
+     };
+
+     Service = {
+       Type = "simple";
+       ExecStart = "${pkgs.stdenv.shell} -l -c 'exec %h/.nix-profile/bin/emacs --fg-daemon'";
+       ExecStop = "%h/.nix-profile/bin/emacsclient --eval '(kill-emacs)'";
+       Restart = "on-failure";
+     };
+
+     Install = {
+       WantedBy = [ "default.target" ];
+     };
+  };
   # manual.manpages.enable = false;
 
 }
