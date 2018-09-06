@@ -96,7 +96,7 @@ in
   services.redshift.latitude = "22";
   services.redshift.longitude = "114";
 
-  home.sessionVariables.EDITOR = "emacsclient";
+  home.sessionVariables.EDITOR = "emacsclient -c";
   home.sessionVariables.LESS = "-R";
 
   programs.home-manager.enable = true;
@@ -134,6 +134,7 @@ in
   programs.fish = {
     enable = true;
     shellAliases = with pkgs; {
+      ed = "eval $EDITOR";
       pcat = "${python3Packages.pygments}/bin/pygmentize";
       ipython = let
         pythonEnv = (python3.withPackages (ps: [
