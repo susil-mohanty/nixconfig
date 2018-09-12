@@ -106,10 +106,9 @@ in
   programs.home-manager.enable = true;
 
   programs.browserpass.enable = true;
-  # programs.vim.enable = true;
-  programs.neovim.enable = true;
-  programs.neovim.withPython3 = true;
-  programs.neovim.withPython = true;
+  # programs.neovim.enable = true;
+  # programs.neovim.withPython3 = true;
+  # programs.neovim.withPython = true;
 
   programs.emacs = {
     enable = true;

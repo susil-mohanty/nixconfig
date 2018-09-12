@@ -44,12 +44,14 @@
   services.jupyter.kernels = {
     python3 = let
       env = (pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
+              Keras
               ipykernel
+              matplotlib
               pandas
+              pillow
               pip
               scikitlearn
               tensorflowWithCuda
-              Keras
             ]));
     in {
       displayName = "Python 3 for machine learning";
