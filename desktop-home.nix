@@ -37,7 +37,11 @@
   services.printing.browsing = true;
   services.printing.listenAddresses = [ "*:631" ];
 
-  networking.firewall.allowedTCPPorts = [ 631 11223 ];
+  networking.firewall.allowedTCPPorts = [
+    631    # cups
+    11223  # jupyter
+    8388   # shadowsocks
+  ];
 
   services.jupyter.enable = true;
   services.jupyter.group = "jupyter";
@@ -62,5 +66,18 @@
   services.jupyter.password = "open('/etc/nixos/jupyter.pwd', 'r', encoding='utf8').read().strip()";
   services.jupyter.port = 11223;
   services.jupyter.ip = "10.10.1.11";
+
+  services.shadowsocks.enable = true;
+  services.shadowsocks.passwordFile = /etc/nixos/shadow.txt;
+
+  services.transmission.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.extraUsers.dong = {
+     isNormalUser = true;
+     uid = 1011;
+     extraGroups = [ "users" "jupyter" ];
+     shell = pkgs.fish;
+  };
 
 }

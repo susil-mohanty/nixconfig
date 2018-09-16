@@ -46,6 +46,8 @@ in
     exa # ls
     ncdu
     fd  # find
+    # images
+    gthumb
   ];
 
   # X
@@ -140,13 +142,6 @@ in
       l = "exa -lah";
       ed = "eval $EDITOR";
       pcat = "${python3Packages.pygments}/bin/pygmentize";
-      ipython = let
-        pythonEnv = (python3.withPackages (ps: [
-          ps.ipython
-          ps.requests
-          ps.psutil
-        ]));
-      in "${pythonEnv}/bin/ipython";
     };
   };
 
