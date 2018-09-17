@@ -89,6 +89,8 @@ in
   # home.file.".config/fish/functions/pcat.fish".source = ./dotfiles/fish/functions/pcat.fish;
   home.file.".config/fish/functions/pless.fish".source = ./dotfiles/fish/functions/pless.fish;
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
+  home.file.".config/fish/functions/fish_user_key_bindings.fish".source = ./dotfiles/fish/functions/fish_user_key_bindings.fish;
+  home.file.".config/fish/functions/fish_greeting.fish".source = ./dotfiles/fish/functions/fish_greeting.fish;
   # home.file.".config/fish/config.fish".source = ./dotfiles/fish/config.fish;
 
   services.gpg-agent = {
