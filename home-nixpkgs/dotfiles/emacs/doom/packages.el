@@ -7,5 +7,6 @@
 (package! solidity-mode)
 (package! deadgrep)
 (package! ein)
+(package! mocha-snippets)
 
 (use-package flycheck-jest)

@@ -2,6 +2,7 @@
 (add-hook 'js2-mode-hook #'prettier-js-mode)
 (add-hook 'typescript-mode-hook #'prettier-js-mode)
 
+(setq mocha-snippets-use-fat-arrows t)
 ;; coulnd't get this to work yet
 ;; (with-eval-after-load 'flycheck
 ;;  (flycheck-jest-setup))
