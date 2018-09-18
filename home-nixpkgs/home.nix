@@ -151,6 +151,12 @@ in
   xsession.windowManager.xmonad.enable = true;
   xsession.windowManager.xmonad.enableContribAndExtras = true;
 
+  services.udiskie = {
+    enable = true;
+    notify = false;
+    tray = "never";
+  };
+
   systemd.user.services.emacs-daemon = {
      Unit = {
        Description = "Emacs text editor";

@@ -63,12 +63,13 @@
       argv = [ "${env.interpreter}" "-m" "ipykernel_launcher" "-f" "{connection_file}" ];
     };
   };
-  services.jupyter.password = "open('/etc/nixos/jupyter.pwd', 'r', encoding='utf8').read().strip()";
+  services.jupyter.password = "open('/etc/nixos/secrets/jupyter.pwd', 'r', encoding='utf8').read().strip()";
   services.jupyter.port = 11223;
   services.jupyter.ip = "10.10.1.11";
 
   services.shadowsocks.enable = true;
-  services.shadowsocks.passwordFile = /etc/nixos/shadow.txt;
+  services.shadowsocks.passwordFile = /etc/nixos/secrets/shadow.txt;
+  services.shadowsocks.encryptionMethod = "aes-256-ctr";
 
   services.transmission.enable = true;
 
