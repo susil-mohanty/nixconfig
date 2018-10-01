@@ -102,6 +102,7 @@ in
   services.redshift.enable = true;
   services.redshift.latitude = "22";
   services.redshift.longitude = "114";
+  services.syncthing.enable = true;
 
   home.sessionVariables.EDITOR = "emacsclient -c";
   home.sessionVariables.LESS = "-R";
@@ -185,5 +186,4 @@ in
       WantedBy = [ "default.target" ];
     };
   };
-
 }
