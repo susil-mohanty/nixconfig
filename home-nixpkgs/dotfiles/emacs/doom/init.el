@@ -104,12 +104,12 @@
       ;nim               ; python + lisp at the speed of c
       nix               ; I hereby declare "nix geht mehr!"
       ;ocaml             ; an objective camel
-       (org              ; organize your plain life in plain text
-        +attach          ; custom attachment system
-        +babel           ; running code in org
-        +capture         ; org-capture in and outside of Emacs
-        +export          ; Exporting org to whatever you want
-        +present)        ; Emacs for presentations
+      (org              ; organize your plain life in plain text
+       +attach          ; custom attachment system
+       +babel           ; running code in org
+       +capture         ; org-capture in and outside of Emacs
+       +export          ; Exporting org to whatever you want
+       +present)
       ;perl              ; write code no one else can comprehend
       ;php               ; perl's insecure younger brother
       ;plantuml          ; diagrams for confusing people more
@@ -141,10 +141,6 @@
        :collab
       ;floobits          ; peer programming for a price
       ;impatient-mode    ; show off code over HTTP
-
-       :private
-       direnv
-       blacken
 
        :config
        ;; For literate config users. This will tangle+compile a config.org

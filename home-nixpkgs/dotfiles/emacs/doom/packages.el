@@ -1,12 +1,14 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; ~/.doom.d/packages.el
 
-(package! prettier-js)
-(package! indium)
-(package! flycheck-jest)
-(package! solidity-mode)
+(package! blacken)
 (package! deadgrep)
+(package! direnv)
 (package! ein)
+(package! flycheck-jest)
+(package! flycheck-jest)
+(package! indium)
 (package! mocha-snippets)
-
-(use-package flycheck-jest)
+(package! org-journal)
+(package! prettier-js)
+(package! solidity-mode)

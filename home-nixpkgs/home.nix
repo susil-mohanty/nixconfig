@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 let updateDoom  = ''
-  cd ~/.emacs.d
-  nix-shell -p coreutils --run make
+  .emacs.d/bin/doom re
   '';
 in
 {
