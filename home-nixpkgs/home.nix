@@ -173,6 +173,17 @@ in
        WantedBy = [ "default.target" ];
      };
   };
-  # manual.manpages.enable = false;
+
+  systemd.user.services.dropbox = {
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.dropbox}/bin/dropbox";
+      PassEnvironment = "DISPLAY";
+      Restart = "changed";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+  };
 
 }
