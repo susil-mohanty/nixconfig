@@ -9,6 +9,10 @@ in
   # spacemacs config needs to be editable
   home.file.".spacemacs".source = "${config.home.homeDirectory}/.nixpkgs/dotfiles/emacs/spacemacs";
 
+  pam.sessionVariables = {
+    XDG_RUNTIME_DIR = "/run/user/$(id -u)";
+  };
+
   home.packages = with pkgs; [
     chromium
     feh
@@ -50,7 +54,7 @@ in
   ];
 
   # X
-  home.file.".xprofile".source = ./dotfiles/x/xinitrc;
+  home.file.".profile".source = ./dotfiles/x/profile;
   home.file.".Xresources".source = ./dotfiles/x/xresources;
   home.file.".xmonad/xmonad.hs".source = ./dotfiles/xmonad/xmonad.hs;
   home.file.".xmobarrc".source = ./dotfiles/x/xmobarrc;
