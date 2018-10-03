@@ -129,6 +129,10 @@ with builtins;
   }
   ];
 
+  networking.firewall.allowedTCPPorts = [
+    8000  # web server
+  ];
+
   virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
