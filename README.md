@@ -1,6 +1,15 @@
-# (Almost) reproducible nix config
+# My (almost) reproducible nixos configuration
+
+## "Features"
+- Pinned checkout of [nixpkgs](https://github.com/nixos/nixpkgs)
+- [home-manager](https://github.com/rycee/home-manager)
+- [doom-emacs](https://github.com/hlissner/doom-emacs)
+- `xmonad`
+- `urxvt`
 
 ## Installation
+
+Not extensively tested, probably with hickups.
 
 ```bash
 cd /etc/nixos
@@ -15,7 +24,7 @@ ln -s /etc/nixos/home-nixpkgs ~/.nixpkgs
 ln -s /etc/nixos/nixpkgs ~/nixpkgs
 
 mv configuration.nix{,.bkp}
-ln -s your-config.nix configuration.nix
+ln -s this-machines-config.nix configuration.nix
 
 # we won't be using channels
 rm -r ~/.nix-defexpr/*
@@ -23,10 +32,12 @@ ln -s /etc/nixos/nixpkgs ~/.nix-defexpr
 
 sudo nixos-rebuild -I nixpkgs=/etc/nixos/nixpkgs -I nixos-config=/etc/nixos/configuration.nix switch
 
+git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
+
 nix-shell ~/.nixpkgs/home-manager -A install
 home-manager switch
 
-# reboot at this point, good luck
+# Probably best to reboot at this point.
 ```
 
 ## Todo
