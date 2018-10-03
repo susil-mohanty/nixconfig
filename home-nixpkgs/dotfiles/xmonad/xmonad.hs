@@ -50,7 +50,8 @@ myConfig = defaultConfig
       , terminal = "urxvtc"
       , startupHook = do
           spawnOn "web" "firefox"
-          spawnOn "code2" "urxvtc"
+          spawnOn "code1" "urxvtc"
+          spawnOn "code1" "emacsclient -c"
       , logHook = dynamicLog
       , layoutHook = mylayout
       , handleEventHook = fullscreenEventHook
