@@ -1,3 +1,6 @@
+#
+# From https://github.com/illegalprime/nix/blob/master/nixos/pia-system.nix
+#
 { config, pkgs, ... }:
 
 with builtins;
