@@ -165,11 +165,10 @@ in
      Unit = {
        Description = "Emacs text editor";
        Documentation = "info:emacs man:emacs(1) https://gnu.org/software/emacs/";
+       After = [ "hm-graphical-session.target" ];
      };
 
      Service = {
-       # TODO do not hardcode user id
-       Environment = "SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh";
        Type = "simple";
        ExecStart = "${pkgs.stdenv.shell} -l -c 'exec %h/.nix-profile/bin/emacs --fg-daemon'";
        ExecStop = "%h/.nix-profile/bin/emacsclient --eval '(kill-emacs)'";
