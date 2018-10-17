@@ -15,3 +15,11 @@
 ;; (setenv "SHELL" "/run/current-system/sw/bin/bash")
 
 (direnv-mode)
+
+(set! :irc "chat.freenode.net"
+    `(:tls t
+      :nick "sveitser"
+      :port 6697
+      :sasl-username ,(+pass-get-user "freenode")
+      :sasl-password (lambda (&rest _) (+pass-get-secret "freenode"))
+      :channels ("#nixos")))
