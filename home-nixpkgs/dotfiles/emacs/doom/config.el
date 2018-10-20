@@ -20,6 +20,6 @@
     `(:tls t
       :nick "sveitser"
       :port 6697
-      :sasl-username ,(+pass-get-user "freenode")
-      :sasl-password (lambda (&rest _) (+pass-get-secret "freenode"))
+      :sasl-username ,(+pass-get-user "freenode.net/sveitser@gmail.com")
+      :sasl-password (lambda (&rest _) (+pass-get-secret "freenode.net/sveitser@gmail.com"))
       :channels ("#nixos")))

@@ -59,6 +59,7 @@ with builtins;
 
   programs.bash.enableCompletion = true;
   programs.slock.enable = true;
+  programs.sedutil.enable = true;
 
   programs.fish.enable = true;
 
