@@ -14,16 +14,6 @@
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices = [
-      {
-        name = "root";
-        device = "/dev/disk/by-uuid/c3d7cbf3-5ddd-42f1-ac03-68dccb16d18a";
-        preLVM = true;
-        keyFile = "/keyfile0.bin";
-        allowDiscards = true;
-      }
-    ];
-
   networking.hostName = "lulus";
 
   powerManagement.cpuFreqGovernor = "performance";

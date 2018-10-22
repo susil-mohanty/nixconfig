@@ -18,15 +18,12 @@ with builtins;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    version = 2;
-    efiSupport = true;
-    enableCryptodisk = true;
-    extraInitrd = /boot/initrd.keys.gz;
-  };
+  fileSystems."/".options = [ "noatime" "nodiratime" ];
+  services.udev.extraRules = ''
+    # set deadline scheduler for non-rotating disks
+    # according to https://wiki.debian.org/SSDOptimization, deadline is preferred over noop
+    ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
+  '';
 
   i18n = {
      consoleKeyMap = "colemak/en-latin9";
@@ -70,6 +67,7 @@ with builtins;
   services.pcscd.enable = true;
   services.compton.enable = true;
   services.resolved.enable = true;
+  services.fstrim.enable = true;
 
   fonts.fonts = with pkgs; [
     arphic-ukai
