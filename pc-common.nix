@@ -19,11 +19,19 @@ with builtins;
   boot.loader.efi.canTouchEfiVariables = true;
 
   fileSystems."/".options = [ "noatime" "nodiratime" ];
+
   services.udev.extraRules = ''
     # set deadline scheduler for non-rotating disks
     # according to https://wiki.debian.org/SSDOptimization, deadline is preferred over noop
     ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
   '';
+
+  fileSystems."/tmp" = {
+    mountPoint = "/tmp";
+    device = "tmpfs";
+    fsType = "tmpfs";
+    options = [ "nosuid" "nodev" "relatime" ];
+  };
 
   i18n = {
      consoleKeyMap = "colemak/en-latin9";
