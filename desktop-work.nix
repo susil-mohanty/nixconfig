@@ -16,16 +16,6 @@
      ./pc-common.nix
     ];
 
-  boot.initrd.luks.devices = [
-      {
-        name = "root";
-        device = "/dev/disk/by-uuid/49a4f5e8-db41-4b4b-800f-7df8ccaa22b3";
-        preLVM = true;
-        keyFile = "/keyfile0.bin";
-        allowDiscards = true;
-      }
-    ];
-
   # boot.blacklistedKernelModules = [ "rtl8192se" ];
   boot.initrd.kernelModules = [ "8812au" ];
   boot.extraModulePackages = [ pkgs.linuxPackages.rtl8821au ];
