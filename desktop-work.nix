@@ -23,6 +23,8 @@
   networking.hostName = "mas";
   networking.networkmanager.enable = true;
 
+  powerManagement.cpuFreqGovernor = "performance";
+
   # environment.systemPackages = with pkgs; [
   #   linuxPackages.rtlwifi_new
   # ];
