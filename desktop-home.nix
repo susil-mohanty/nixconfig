@@ -18,6 +18,9 @@
 
   powerManagement.cpuFreqGovernor = "performance";
 
+  # For CUDA.
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   services.printing.enable = true;
   services.printing.drivers = [
     pkgs.gutenprint
