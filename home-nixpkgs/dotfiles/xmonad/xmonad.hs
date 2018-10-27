@@ -43,15 +43,17 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 -- myConfig = kdeConfig
 myConfig = defaultConfig
     {   modMask = mod4Mask
-      ,  workspaces = ["web", "code1", "code2", "code3", "misc1", "misc2"]
+      ,  workspaces = ["code1", "web", "code2", "code3", "misc1", "misc2"]
       , focusedBorderColor = "#CB4B16"
       , normalBorderColor = "#9E9E9E"
       , borderWidth = 2
       , terminal = "urxvtc"
       , startupHook = do
           spawnOn "web" "firefox"
-          spawnOn "code1" "urxvtc"
+          spawnOn "web" "Discord"
+          spawnOn "code1" "urxvt"
           spawnOn "code1" "emacsclient -c"
+      , manageHook = manageSpawn
       , logHook = dynamicLog
       , layoutHook = mylayout
       , handleEventHook = fullscreenEventHook

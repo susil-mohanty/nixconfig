@@ -51,12 +51,18 @@ in
     fd  # find
     # images
     gthumb
+    discord
   ];
 
   # X
   home.file.".profile".source = ./dotfiles/x/profile;
   home.file.".Xresources".source = ./dotfiles/x/xresources;
-  home.file.".xmonad/xmonad.hs".source = ./dotfiles/xmonad/xmonad.hs;
+  home.file.".xmonad/xmonad.hs" = {
+    source = ./dotfiles/xmonad/xmonad.hs;
+    onChange = ''
+      xmonad --recompile
+    '';
+  };
   home.file.".xmobarrc".source = ./dotfiles/x/xmobarrc;
   home.file.".config/xresources_iosevka".source = ./dotfiles/x/xresources_iosevka;
   home.file.".config/colortheme.Xresources".source = ./dotfiles/x/base16-gruvbox-dark-medium-256.Xresources;

@@ -42,7 +42,7 @@ home-manager switch
 
 ## Todo
 - [ ] Deterministic doom emacs setup.
-- [ ] Recompile xmonad when configuration is modified.
+- [x] Recompile xmonad when configuration is modified.
 
 ## Credits
 
