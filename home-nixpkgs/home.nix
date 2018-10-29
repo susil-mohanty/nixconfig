@@ -52,6 +52,7 @@ in
     # images
     gthumb
     discord
+    weechat
   ];
 
   # X

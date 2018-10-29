@@ -51,6 +51,7 @@ myConfig = defaultConfig
       , startupHook = do
           spawnOn "web" "firefox"
           spawnOn "web" "Discord"
+          spawnOn "web" "weechat"
           spawnOn "code1" "urxvt"
           spawnOn "code1" "emacsclient -c"
       , manageHook = manageSpawn
