@@ -74,7 +74,6 @@
      isNormalUser = true;
      uid = 1011;
      extraGroups = [ "users" "jupyter" ];
-     shell = pkgs.fish;
   };
 
 }

@@ -1,0 +1,35 @@
+! Base16 Snazzy
+! Scheme: Chawye Hsu (https://github.com/h404bi) based on Hyper Snazzy Theme (https://github.com/sindresorhus/hyper-snazzy)
+
+URxvt*background:                     #282a36
+URxvt*foreground:                     #e2e4e5
+URxvt*cursorColor:                    #e2e4e5
+
+URxvt*scrollColor:                    #e2e4e5
+URxvt*highlightColor:                 #43454f
+URxvt*highlightTextColor:             #a5a5a9
+
+URxvt*color0:                         #282a36
+URxvt*color1:                         #ff5c57
+URxvt*color2:                         #5af78e
+URxvt*color3:                         #f3f99d
+URxvt*color4:                         #57c7ff
+URxvt*color5:                         #ff6ac1
+URxvt*color6:                         #9aedfe
+URxvt*color7:                         #e2e4e5
+URxvt*color8:                         #78787e
+URxvt*color9:                         #ff5c57
+URxvt*color10:                        #5af78e
+URxvt*color11:                        #f3f99d
+URxvt*color12:                        #57c7ff
+URxvt*color13:                        #ff6ac1
+URxvt*color14:                        #9aedfe
+URxvt*color15:                        #f1f1f0
+
+URxvt*color16:                        #ff9f43
+URxvt*color17:                        #b2643c
+URxvt*color18:                        #34353e
+URxvt*color19:                        #43454f
+URxvt*color20:                        #a5a5a9
+URxvt*color21:                        #eff0eb
+

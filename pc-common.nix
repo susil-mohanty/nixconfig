@@ -52,9 +52,10 @@ with builtins;
     git
     gnupg
     htop
+    jq
     nmon
     pass
-    plasma-nm
+    tmux
     tree
     usbutils
     vim

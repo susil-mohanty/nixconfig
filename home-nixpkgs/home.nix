@@ -66,7 +66,7 @@ in
   };
   home.file.".xmobarrc".source = ./dotfiles/x/xmobarrc;
   home.file.".config/xresources_iosevka".source = ./dotfiles/x/xresources_iosevka;
-  home.file.".config/colortheme.Xresources".source = ./dotfiles/x/base16-gruvbox-dark-medium-256.Xresources;
+  home.file.".config/colortheme.Xresources".source = ./dotfiles/x/base16-snazzy-dark.Xresources;
 
   # editors
   home.file.".config/nvim/init.vim".source = ./dotfiles/vim/init.vim;
