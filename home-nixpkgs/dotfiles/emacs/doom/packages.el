@@ -12,3 +12,4 @@
 (package! org-journal)
 (package! prettier-js)
 (package! solidity-mode)
+(package! weechat)
