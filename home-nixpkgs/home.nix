@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let updateDoom  = ''
-  .emacs.d/bin/doom re -y
+  .emacs.d/bin/doom -y re
   '';
 in
 {

@@ -8,16 +8,6 @@
       ./pc-common.nix
     ];
 
-  boot.initrd.luks.devices = [
-      {
-        name = "root";
-        device = "/dev/disk/by-uuid/05807982-f62a-4e4b-9baf-45d62d253aa6";
-        preLVM = true;
-        keyFile = "/keyfile0.bin";
-        allowDiscards = true;
-      }
-    ];
-
   networking.hostName = "trex";
   networking.networkmanager.enable = true;
 
