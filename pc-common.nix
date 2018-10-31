@@ -34,7 +34,7 @@ with builtins;
   };
 
   i18n = {
-     consoleKeyMap = "colemak/en-latin9";
+     consoleKeyMap = "colemak/colemak";
      defaultLocale = "en_US.UTF-8";
      inputMethod.enabled = "fcitx";
      inputMethod.fcitx.engines = [ pkgs.fcitx-engines.libpinyin ];
