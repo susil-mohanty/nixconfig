@@ -101,6 +101,7 @@ in
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
   home.file.".config/fish/functions/fish_user_key_bindings.fish".source = ./dotfiles/fish/functions/fish_user_key_bindings.fish;
   home.file.".config/fish/functions/fish_greeting.fish".source = ./dotfiles/fish/functions/fish_greeting.fish;
+  home.file.".config/fish/functions/ed.fish".source = ./dotfiles/fish/functions/ed.fish;
   # home.file.".config/fish/config.fish".source = ./dotfiles/fish/config.fish;
 
   services.gpg-agent = {
@@ -153,7 +154,6 @@ in
     enable = true;
     shellAliases = with pkgs; {
       l = "exa -lah";
-      ed = "eval $EDITOR";
       pcat = "${python3Packages.pygments}/bin/pygmentize";
     };
   };
