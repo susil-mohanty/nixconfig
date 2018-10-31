@@ -13,3 +13,4 @@
 (package! prettier-js)
 (package! solidity-mode)
 (package! weechat)
+(package! terraform-mode)
