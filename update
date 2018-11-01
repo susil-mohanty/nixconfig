@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+error_notify() {
+  notify-send 'Update failed!'
+}
+
+trap 'error_notify' ERR
+
+git pull
+git submodule update
+sudo nixos-rebuild switch
+home-manager switch
+
+notify-send "Update complete!"

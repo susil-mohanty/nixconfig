@@ -34,7 +34,6 @@ in
     gucharmap
     jetbrains.idea-ultimate
     graphviz  # plantuml
-    flameshot
     nmap
     urxvt_perls
     xsel  # for urxvt copy/paste
@@ -53,6 +52,7 @@ in
     gthumb
     discord
     weechat
+    libnotify
   ];
 
   # X
@@ -115,6 +115,13 @@ in
   services.redshift.latitude = "22";
   services.redshift.longitude = "114";
   services.syncthing.enable = true;
+  services.dunst.enable = true;         # notification daemon
+  services.dunst.settings = {
+    global = {
+      geometry = "0x5-0+0";
+      font = "Noto Sans 36"; }; };
+
+  services.flameshot.enable = true;     # screeshots
 
   home.sessionVariables.EDITOR = "emacsclient -c";
   home.sessionVariables.LESS = "-R";
