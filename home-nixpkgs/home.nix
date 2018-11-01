@@ -155,7 +155,13 @@ in
     signing.key = "0xB24B3D9AD2157945";
     signing.signByDefault = true;
     ignores = [ ".projectile" ];
+    extraConfig = {
+      pull = {
+        rebase = true;
+      };
+    };
   };
+
   programs.direnv.enable = true;
   programs.fish = {
     enable = true;
