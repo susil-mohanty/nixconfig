@@ -5,7 +5,7 @@ let updateDoom = ''
   '';
   fontsize = pkgs.writeShellScriptBin "fontsize" ''
     info="$(xrandr -q|grep -w 'connected')"
-    pixels="$(echo $info|perl -pe 's|.*?connected (\d+)x.*|\1|')"
+    pixels="$(echo $info|perl -pe 's|.*? (\d+)x.*|\1|')"
     length="$(echo $info|perl -pe 's|.*? (\d+)mm.*|\1|')"
     awk "BEGIN {print int(2.845e-3 * $pixels - 5.015e-3 * $length + 9.937 + 0.5)}"
   '';
@@ -16,6 +16,7 @@ in
   };
   home.sessionVariables.EDITOR = "emacsclient -c";
   home.sessionVariables.LESS = "-R";
+  home.keyboard.layout = "us -variant colemak";
 
   home.packages = with pkgs; [
     chromium
