@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     xorg.xbacklight
     linuxPackages.tp_smapi
+    acpi
   ];
 
   powerManagement.powertop.enable = true;
