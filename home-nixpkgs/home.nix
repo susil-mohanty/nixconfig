@@ -1,71 +1,60 @@
 { config, pkgs, ... }:
 
-let updateDoom  = ''
-  .emacs.d/bin/doom -y re
+let updateDoom = ''
+    .emacs.d/bin/doom -y re
+  '';
+  fontsize = pkgs.writeShellScriptBin "fontsize" ''
+    info="$(xrandr -q|grep -w 'connected')"
+    pixels="$(echo $info|perl -pe 's|.*?connected (\d+)x.*|\1|')"
+    length="$(echo $info|perl -pe 's|.*? (\d+)mm.*|\1|')"
+    awk "BEGIN {print int(2.845e-3 * $pixels - 5.015e-3 * $length + 9.937 + 0.5)}"
   '';
 in
 {
-  # Emacs config
-  # spacemacs config needs to be editable
-  home.file.".spacemacs".source = "${config.home.homeDirectory}/.nixpkgs/dotfiles/emacs/spacemacs";
-
   pam.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
   };
+  home.sessionVariables.EDITOR = "emacsclient -c";
+  home.sessionVariables.LESS = "-R";
 
   home.packages = with pkgs; [
     chromium
+    discord
+    evince
+    exa                     # ls
+    fd                      # find
     feh
-    fira-code
-    fira-code-symbols
-    fira-mono
-    okular
+    fontsize
+    gmrun
+    gnome3.nautilus
+    goldendict
+    google-chrome
+    graphviz                # for plantuml
+    gthumb
+    haskellPackages.xmobar
+    jetbrains.idea-ultimate
+    libnotify
+    ncdu
+    nmap
     pavucontrol
+    ripgrep
     rxvt_unicode_with-plugins
-    sqlite
+    spotify
     tdesktop
     thefuck
+    urxvt_perls
+    vlc
+    weechat
+    wgetpaste
     wirelesstools
     xclip
-    wgetpaste
-    ag
-    ripgrep
-    gmrun
-    gucharmap
-    jetbrains.idea-ultimate
-    graphviz  # plantuml
-    nmap
-    urxvt_perls
-    xsel  # for urxvt copy/paste
-    gnome3.nautilus
-    gthumb
-    evince
-    google-chrome
-    haskellPackages.xmobar
-    spotify
-    goldendict
-    # better cli tools
-    exa # ls
-    ncdu
-    fd  # find
-    # images
-    gthumb
-    discord
-    weechat
-    libnotify
+    xsel                    # for urxvt copy/paste
   ];
 
   # X
   home.file.".profile".source = ./dotfiles/x/profile;
   home.file.".Xresources".source = ./dotfiles/x/xresources;
-  home.file.".xmonad/xmonad.hs" = {
-    source = ./dotfiles/xmonad/xmonad.hs;
-    onChange = ''
-      xmonad --recompile
-    '';
-  };
   home.file.".xmobarrc".source = ./dotfiles/x/xmobarrc;
-  home.file.".config/xresources_iosevka".source = ./dotfiles/x/xresources_iosevka;
   home.file.".config/colortheme.Xresources".source = ./dotfiles/x/base16-snazzy-dark.Xresources;
 
   # editors
@@ -96,13 +85,11 @@ in
   home.file.".config/fish/functions/fish_title.fish".source = ./dotfiles/fish/functions/fish_title.fish;
 
   home.file.".config/fish/functions/nix-ipython.fish".source = ./dotfiles/fish/functions/nix-ipython.fish;
-  # home.file.".config/fish/functions/pcat.fish".source = ./dotfiles/fish/functions/pcat.fish;
   home.file.".config/fish/functions/pless.fish".source = ./dotfiles/fish/functions/pless.fish;
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
   home.file.".config/fish/functions/fish_user_key_bindings.fish".source = ./dotfiles/fish/functions/fish_user_key_bindings.fish;
   home.file.".config/fish/functions/fish_greeting.fish".source = ./dotfiles/fish/functions/fish_greeting.fish;
   home.file.".config/fish/functions/ed.fish".source = ./dotfiles/fish/functions/ed.fish;
-  # home.file.".config/fish/config.fish".source = ./dotfiles/fish/config.fish;
 
   services.gpg-agent = {
     enable = true;
@@ -122,17 +109,14 @@ in
       font = "Noto Sans 36"; }; };
 
   services.flameshot.enable = true;     # screeshots
-
-  home.sessionVariables.EDITOR = "emacsclient -c";
-  home.sessionVariables.LESS = "-R";
+  services.udiskie = {
+    enable = true;
+    notify = false;
+    tray = "never";
+  };
 
   programs.home-manager.enable = true;
-
   programs.browserpass.enable = true;
-  # programs.neovim.enable = true;
-  # programs.neovim.withPython3 = true;
-  # programs.neovim.withPython = true;
-
   programs.emacs = {
     enable = true;
 
@@ -174,12 +158,7 @@ in
   xsession.enable = true;
   xsession.windowManager.xmonad.enable = true;
   xsession.windowManager.xmonad.enableContribAndExtras = true;
-
-  services.udiskie = {
-    enable = true;
-    notify = false;
-    tray = "never";
-  };
+  xsession.windowManager.xmonad.config = ./dotfiles/xmonad/xmonad.hs;
 
   systemd.user.services.emacs-daemon = {
      Unit = {

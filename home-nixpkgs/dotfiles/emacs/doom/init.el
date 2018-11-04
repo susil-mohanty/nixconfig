@@ -1,7 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
-(setq doom-font (font-spec :family "Iosevka" :size 14))
+(setq fontsize (string-to-number (shell-command-to-string "fontsize")))
+(setq doom-font (font-spec :family "Iosevka" :size fontsize))
 
 (doom! :feature
       ;debugger          ; FIXME stepping through code, to help you add bugs

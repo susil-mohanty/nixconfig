@@ -43,7 +43,6 @@ with builtins;
   time.timeZone = "Asia/Hong_Kong";
 
   environment.systemPackages = with pkgs; [
-    ag
     alsaUtils
     curl
     direnv
@@ -53,8 +52,10 @@ with builtins;
     gnupg
     htop
     jq
+    nix-index
     nmon
     pass
+    ripgrep
     tmux
     tree
     usbutils
@@ -64,26 +65,27 @@ with builtins;
   ];
 
   programs.bash.enableCompletion = true;
-  programs.slock.enable = true;
-  programs.sedutil.enable = true;
-
   programs.fish.enable = true;
+  programs.sedutil.enable = true;
+  programs.slock.enable = true;
 
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
-  services.openssh.enable = true;
-  services.locate.enable = true;
-  services.pcscd.enable = true;
   services.compton.enable = true;
-  services.resolved.enable = true;
   services.fstrim.enable = true;
+  services.locate.enable = true;
+  services.openssh.enable = true;
+  services.pcscd.enable = true;
+  services.resolved.enable = true;
 
   fonts.fonts = with pkgs; [
     arphic-ukai
+    dejavu_fonts
+    emacs-all-the-icons-fonts
     fira-code
     iosevka
-    noto-fonts
     noto-fonts-cjk
+    powerline-fonts
   ];
 
   hardware.pulseaudio.enable = true;
