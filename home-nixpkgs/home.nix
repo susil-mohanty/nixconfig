@@ -70,6 +70,12 @@ in
     onChange = updateDoom;
   };
   home.file.".doom.d/config.el".source = ./dotfiles/emacs/doom/config.el;
+  # doom-emacs installs packages into ~/.emacs.d so we symlink directly
+  home.file.".emacs.d" = {
+    recursive = true;
+    source = "${config.home.homeDirectory}/.nixpkgs/doom-emacs";
+    onChange = updateDoom;
+  };
   # XXX make fails because this is in the nix store.
   # home.file.".emacs.d" = {
   #   source = pkgs.fetchFromGitHub {

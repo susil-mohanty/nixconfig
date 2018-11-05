@@ -5,3 +5,7 @@
     path = nixpkgs
     url = https://github.com/nixos/nixpkgs-channels
     branch = nixos-unstable
+[submodule "home-nixpkgs/doom-emacs"]
+	path = home-nixpkgs/doom-emacs
+	url = https://github.com/hlissner/doom-emacs
+	branch = develop

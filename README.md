@@ -32,8 +32,6 @@ ln -s /etc/nixos/nixpkgs ~/.nix-defexpr
 
 sudo nixos-rebuild -I nixpkgs=/etc/nixos/nixpkgs -I nixos-config=/etc/nixos/configuration.nix switch
 
-git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
-
 nix-shell ~/.nixpkgs/home-manager -A install
 home-manager switch
 
@@ -42,6 +40,8 @@ home-manager switch
 
 ## Todo
 - [ ] Deterministic doom emacs setup.
+  + [x] doom-emacs submodule.
+  + [ ] Emacs packages via nix.
 - [x] Recompile xmonad when configuration is modified.
 
 ## Credits
