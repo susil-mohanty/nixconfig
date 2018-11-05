@@ -1,18 +1,18 @@
 Config {
 
    -- appearance
-   font =         "xft:Fira Code:size=10:bold:antialias=true"
-   , bgColor =      "#FDF6E3"
-   , fgColor =      "#073642"
+   font =         "xft:Iosevka:size=10:bold:antialias=true"
+   , bgColor =      "#282A36"
+   , fgColor =      "#e2e4e5"
    , position =     Top
    , border =       BottomB
-   , borderColor =  "#646464"
-   , textOffset = 15
+   , borderColor =  "#282A36"
+--   , textOffset = 15
 
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = " %multicpu% | %coretemp% | %memory% | %dynnetwork% | %battery% }{%StdinReader% | %dropbox% | %RJTT% | %date% || %kbd% "
+   , template = " %multicpu%   %coretemp%   %memory%   %dynnetwork%   %battery%   }{%StdinReader%   %dropbox%   %RJTT%   %date%   %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -39,53 +39,53 @@ Config {
    , commands =
 
         -- weather monitor
-        [ Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
+        [ Run Weather "RJTT" [ "--template", "<skyCondition>   <fc=#0AAEB3><tempC></fc>°C   <fc=#0AAEB3><rh></fc>%   <fc=#0AAEB3><pressure></fc>hPa"
                              ] 36000
 
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB <rx>kB"
                              , "--Low"      , "1000"       -- units: kB/s
                              , "--High"     , "5000"       -- units: kB/s
                              , "-m"         , "4"
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#519F50"
+                             , "--normal"   , "#FBB829"
+                             , "--high"     , "#F75341"
                              ] 10
 
         -- cpu activity monitor
         , Run MultiCpu       [ "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "-p"         , "3"
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#519F50"
+                             , "--normal"   , "#FBB829"
+                             , "--high"     , "#F75341"
                              ] 10
 
         -- cpu core temperature monitor
         , Run CoreTemp       [ "--Low"      , "70"        -- units: °C
                              , "--High"     , "80"        -- units: °C
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#519F50"
+                             , "--normal"   , "#FBB829"
+                             , "--high"     , "#F75341"
                              ] 50
 
         -- memory usage monitor
         , Run Memory         [ "--template" ,"Mem: <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#519F50"
+                             , "--normal"   , "#FBB829"
+                             , "--high"     , "#F75341"
                              ] 10
 
         -- battery monitor
         , Run BatteryP  ["BAT0", "BAT1"]
-			     [ "--template" , "Batt: <left>% - <timeleft>"
+			     [ "--template" , "<left>% - <timeleft>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+                             , "--low"      , "#F75341"
+                             , "--normal"   , "#FBB829"
+                             , "--high"     , "#519F50"
 
                              , "--" -- battery specific options
                                        -- discharging status

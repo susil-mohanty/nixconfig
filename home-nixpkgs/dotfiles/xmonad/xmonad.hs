@@ -44,8 +44,8 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myConfig = defaultConfig
     {   modMask = mod4Mask
       ,  workspaces = ["code1", "web", "code2", "code3", "misc1", "misc2"]
-      , focusedBorderColor = "#CB4B16"
-      , normalBorderColor = "#9E9E9E"
+      , focusedBorderColor = "#FF5C8F"
+      , normalBorderColor = "#282A36"
       , borderWidth = 2
       , terminal = "urxvtc"
       , startupHook = do
