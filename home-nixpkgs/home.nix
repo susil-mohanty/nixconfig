@@ -42,6 +42,7 @@ in
     rxvt_unicode_with-plugins
     spotify
     tdesktop
+    texstudio
     thefuck
     urxvt_perls
     vlc
