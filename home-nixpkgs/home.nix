@@ -173,6 +173,7 @@ in
        Type = "simple";
        ExecStart = "${pkgs.stdenv.shell} -l -c 'exec %h/.nix-profile/bin/emacs --fg-daemon'";
        ExecStop = "%h/.nix-profile/bin/emacsclient --eval '(kill-emacs)'";
+       PassEnvironment = "DISPLAY";
        Restart = "on-failure";
      };
 
