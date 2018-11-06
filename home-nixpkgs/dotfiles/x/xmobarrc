@@ -3,7 +3,7 @@ Config {
    -- appearance
    font =         "xft:Iosevka:size=10:bold:antialias=true"
    , bgColor =      "#282A36"
-   , fgColor =      "#e2e4e5"
+   , fgColor =      "#ABABAB"
    , position =     Top
    , border =       BottomB
    , borderColor =  "#282A36"
@@ -39,42 +39,44 @@ Config {
    , commands =
 
         -- weather monitor
-        [ Run Weather "RJTT" [ "--template", "<skyCondition>   <fc=#0AAEB3><tempC></fc>°C   <fc=#0AAEB3><rh></fc>%   <fc=#0AAEB3><pressure></fc>hPa"
+        [ Run Weather "RJTT" [ "--template", "<skyCondition>   <fc=#F3F99C><tempC></fc>°   <fc=#99ECFE><rh></fc>%   <fc=#F0F0F0><pressure></fc>hPa"
                              ] 36000
 
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB <rx>kB"
+        , Run DynNetwork     [ "--template" , " ⬆<tx> k  ⬇<rx> k"
                              , "--Low"      , "1000"       -- units: kB/s
                              , "--High"     , "5000"       -- units: kB/s
-                             , "-m"         , "4"
-                             , "--low"      , "#519F50"
-                             , "--normal"   , "#FBB829"
+                             , "-m"         , "6"
+                             , "--low"      , "#5AF78E"
+                             , "--normal"   , "#F3F99D"
                              , "--high"     , "#F75341"
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--Low"      , "50"         -- units: %
+        , Run MultiCpu       [ "--template" , "<user>u <system>s"
+                             , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "-p"         , "3"
-                             , "--low"      , "#519F50"
-                             , "--normal"   , "#FBB829"
+                             , "--low"      , "#5AF78E"
+                             , "--normal"   , "#F3F99D"
                              , "--high"     , "#F75341"
                              ] 10
 
         -- cpu core temperature monitor
-        , Run CoreTemp       [ "--Low"      , "70"        -- units: °C
+        , Run CoreTemp       [ "--template" ," <core0>°"
+                             , "--Low"      , "70"        -- units: °C
                              , "--High"     , "80"        -- units: °C
-                             , "--low"      , "#519F50"
-                             , "--normal"   , "#FBB829"
+                             , "--low"      , "#5AF78E"
+                             , "--normal"   , "#F3F99D"
                              , "--high"     , "#F75341"
                              ] 50
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+        , Run Memory         [ "--template" ,"<usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
-                             , "--low"      , "#519F50"
-                             , "--normal"   , "#FBB829"
+                             , "--low"      , "#5AF78E"
+                             , "--normal"   , "#F3F99D"
                              , "--high"     , "#F75341"
                              ] 10
 
@@ -83,9 +85,9 @@ Config {
 			     [ "--template" , "<left>% - <timeleft>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "#F75341"
-                             , "--normal"   , "#FBB829"
-                             , "--high"     , "#519F50"
+                             , "--low"      , "#FF6ABF"
+                             , "--normal"   , "#F3F99C"
+                             , "--high"     , "#59F78D"
 
                              , "--" -- battery specific options
                                        -- discharging status
@@ -101,8 +103,8 @@ Config {
         , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
 
         -- keyboard layout indicator
-        , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-                             , ("us"         , "<fc=#8B0000>US</fc>")
+        , Run Kbd            [ ("us(colemak)" , "<fc=#59F78D>colemak</fc>")
+                             , ("us"         , "<fc=#FF69C1>US</fc>")
                              ]
 
         -- show dropbox status
