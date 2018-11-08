@@ -8,8 +8,29 @@ error_notify() {
 trap 'error_notify' ERR
 
 git pull
-git submodule update --remote
+
+pushd nixpkgs
+git fetch --all
+git checkout system
+git rebase channels/nixos-unstable
+git push --force origin system
+popd
+
+pushd home-nixpkgs/home-manager
+git checkout master
+git pull origin master
+popd
+
+pushd home-nixpkgs/doom-emacs
+git checkout develop
+git pull origin develop
+popd
+
 sudo nixos-rebuild switch
+
 home-manager switch
+
+~/.emacs.d/bin/doom -y u
+~/.emacs.d/bin/doom -y re
 
 notify-send "Update complete!"
