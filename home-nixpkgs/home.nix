@@ -16,7 +16,7 @@ in
   };
   home.sessionVariables.EDITOR = "emacsclient -c";
   home.sessionVariables.LESS = "-R";
-  home.keyboard.layout = "us -variant colemak";
+  home.keyboard.variant = "colemak";
 
   home.packages = with pkgs; [
     chromium
