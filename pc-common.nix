@@ -72,13 +72,6 @@ with builtins;
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
-  services.compton.enable = true;
-  services.compton.backend = "glx";
-  services.compton.extraOptions = ''
-    xrender-sync = true;
-    xrender-sync-fence = true;
-  '';
-
   services.fstrim.enable = true;
   services.locate.enable = true;
   services.openssh.enable = true;

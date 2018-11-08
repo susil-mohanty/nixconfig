@@ -20,6 +20,16 @@
 
   # For CUDA.
   services.xserver.videoDrivers = [ "nvidia" ];
+  # Prevents most tearing.
+  services.xserver.extraConfig = ''
+    Section "Device"
+        Identifier "Default nvidia Device"
+        Driver	"nvidia"
+        Option	"NoLogo"				"true"
+        Option	"CoolBits"				"24"
+        Option	"ForceFullCompositionPipeline"	"true"
+    EndSection
+  '';
 
   services.printing.enable = true;
   services.printing.drivers = [
