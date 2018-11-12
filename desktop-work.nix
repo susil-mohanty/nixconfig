@@ -16,6 +16,14 @@
   networking.networkmanager.enable = true;
   users.extraUsers.lulu.extraGroups = [ "networkmanager" ];
 
+  services.xserver.extraConfig = ''
+    Section "Device"
+      Identifier  "Intel Graphics"
+      Driver      "intel"
+      Option      "TearFree" "true"
+    EndSection
+  '';
+
   powerManagement.cpuFreqGovernor = "performance";
 
 }
