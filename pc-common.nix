@@ -24,6 +24,9 @@ with builtins;
     # set deadline scheduler for non-rotating disks
     # according to https://wiki.debian.org/SSDOptimization, deadline is preferred over noop
     ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
+
+    # UHK
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", MODE:="0666"
   '';
 
   fileSystems."/tmp" = {

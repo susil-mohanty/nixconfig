@@ -109,6 +109,9 @@ in
   services.redshift.enable = true;
   services.redshift.latitude = "22";
   services.redshift.longitude = "114";
+  services.redshift.brightness.night = "0.8";
+  services.redshift.temperature.night = 3000;
+
   services.syncthing.enable = true;
   services.dunst.enable = true;         # notification daemon
   services.dunst.settings = {
