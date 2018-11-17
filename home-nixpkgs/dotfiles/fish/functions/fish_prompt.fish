@@ -1,5 +1,8 @@
 function fish_prompt --description 'Display prompt'
-	set last_ret $status
+
+    set -l last_ret $status
+    set -l green 5AF78E
+    set -l red FF6ABF
 
     if not set -q __fish_prompt_hostname
         set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
@@ -29,9 +32,9 @@ function fish_prompt --description 'Display prompt'
 
     # Add colors depending on if previous command was successful or not
     if test $last_ret = 0
-        set PROMPT $PROMPT(set_color --bold 689d6a)
+        set PROMPT $PROMPT(set_color --bold $green)
     else
-        set PROMPT $PROMPT(set_color --bold cc241d)
+        set PROMPT $PROMPT(set_color --bold $red)
     end
 
     # Add sign at end of prompt depending on user

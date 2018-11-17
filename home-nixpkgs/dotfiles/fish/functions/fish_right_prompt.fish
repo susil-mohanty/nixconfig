@@ -2,7 +2,6 @@ function fish_right_prompt --description 'Display right prompt'
 
 	set PROMPT (set_color 777777)" "(date +%H:%M:%S)" "
 
-
     if test "$IN_NIX_SHELL" = "pure"
         set PROMPT (set_color 519F50)" ❄ "$PROMPT
     else if test "$IN_NIX_SHELL" = "impure"
