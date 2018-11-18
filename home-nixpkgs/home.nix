@@ -61,15 +61,15 @@ in
 
   # editors
   home.file.".config/nvim/init.vim".source = ./dotfiles/vim/init.vim;
-  home.file.".doom.d/init.el" = {
+  home.file.".config/doom/init.el" = {
     source = ./dotfiles/emacs/doom/init.el;
     onChange = updateDoom;
   };
-  home.file.".doom.d/packages.el" = {
+  home.file.".config/doom/packages.el" = {
     source = ./dotfiles/emacs/doom/packages.el;
     onChange = updateDoom;
   };
-  home.file.".doom.d/config.el".source = ./dotfiles/emacs/doom/config.el;
+  home.file.".config/doom/config.el".source = ./dotfiles/emacs/doom/config.el;
   # doom-emacs installs packages into ~/.emacs.d so we symlink directly
   home.file.".emacs.d" = {
     recursive = true;
