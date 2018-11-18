@@ -9,9 +9,11 @@
 (package! flycheck-jest)
 (package! flycheck-jest)
 (package! indium)
+(package! mocha)
 (package! mocha-snippets)
 (package! org-journal)
 (package! prettier-js)
 (package! solidity-mode)
 (package! terraform-mode)
 (package! weechat)
+

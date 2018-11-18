@@ -37,3 +37,13 @@
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
+
+(setq mocha-which-node "node")
+(load! "local/jest")
+(after! mocha
+  (set-popup-rule! "^\\*mocha tests*"
+                   :side 'right
+                   :size 140
+                   :select nil
+                   :quit nil
+                   :ttl t))

@@ -70,6 +70,12 @@ in
     onChange = updateDoom;
   };
   home.file.".config/doom/config.el".source = ./dotfiles/emacs/doom/config.el;
+
+  home.file.".config/doom/local/jest.el".source = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/orther/doom-emacs-private/7abc51ab8f31dd10bbd2ced495297bf2c6be91bb/local/jest.el";
+    sha256 = "14f7gj1495wp7i855pa87257wwbdqchh8429qdhsjhv38smypm76";
+  };
+
   # doom-emacs installs packages into ~/.emacs.d so we symlink directly
   home.file.".emacs.d" = {
     recursive = true;
