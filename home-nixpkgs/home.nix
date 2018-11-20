@@ -155,7 +155,7 @@ in
     userEmail = "sveitser@gmail.com";
     signing.key = "0xB24B3D9AD2157945";
     signing.signByDefault = true;
-    ignores = [ ".projectile" ];
+    ignores = [ ".projectile" ".indium.json" ];
     extraConfig = {
       pull = {
         rebase = true;
