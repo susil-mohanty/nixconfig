@@ -160,6 +160,9 @@ in
       pull = {
         rebase = true;
       };
+      merge = {
+        ff = "only";
+      };
     };
   };
 
