@@ -47,3 +47,5 @@
                    :select nil
                    :quit nil
                    :ttl t))
+
+(setq evil-escape-key-sequence "hh")
