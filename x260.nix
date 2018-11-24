@@ -42,7 +42,6 @@
   hardware.trackpoint.sensitivity = 200;
 
   services.xserver.dpi = 113; 
-  services.xserver.synaptics.enable = true;
 
   users.extraUsers.lulu.extraGroups = [ "wheel" "networkmanager" "docker"];
 

@@ -99,7 +99,6 @@ with builtins;
   };
 
   services.xserver = {
-     synaptics.enable = true;
      enable = true;
      xkbVariant = "colemak";
 
