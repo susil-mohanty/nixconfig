@@ -5,7 +5,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 
-mylayout = spacing 2 $ tiled ||| Full
+mylayout = spacing 2 $ smartBorders tiled ||| smartBorders Full
   where
      tiled   = Tall nmaster delta ratio
      nmaster = 1
