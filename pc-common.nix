@@ -86,9 +86,9 @@ with builtins;
     dejavu_fonts
     emacs-all-the-icons-fonts
     fira-code
-    iosevka
+    fira-code-symbols
+    (nerdfonts.override { withFont = "Iosevka"; })
     noto-fonts-cjk
-    powerline-fonts
   ];
 
   hardware.pulseaudio.enable = true;

@@ -16,4 +16,4 @@
 (package! solidity-mode)
 (package! terraform-mode)
 (package! weechat)
-
+(package! reason-mode)
