@@ -16,6 +16,8 @@ in
   };
   home.sessionVariables.EDITOR = "emacsclient -c";
   home.sessionVariables.LESS = "-R";
+  home.sessionVariables._JAVA_AWT_WM_NONREPARENTING = "1";
+
   home.keyboard.variant = "colemak";
 
   home.packages = with pkgs; [

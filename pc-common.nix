@@ -64,7 +64,6 @@ with builtins;
     usbutils
     vim
     wget
-    wmname
   ];
 
   programs.bash.enableCompletion = true;

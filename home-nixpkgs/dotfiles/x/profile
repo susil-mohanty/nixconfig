@@ -11,7 +11,6 @@ xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 
 feh --bg-fill local/space-wallpaper.jpg  > /dev/null 2>&1
-wmname LG3D
 
 # calculate fontsize that fits screen
 FS=$(fontsize)
