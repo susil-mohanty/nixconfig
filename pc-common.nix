@@ -81,12 +81,13 @@ with builtins;
   services.resolved.enable = true;
 
   fonts.fonts = with pkgs; [
+    # Both needed to have ligatures work with doom-emacs.
+    fira-code-symbols
+    iosevka
+
     arphic-ukai
     dejavu_fonts
     emacs-all-the-icons-fonts
-    fira-code
-    fira-code-symbols
-    (nerdfonts.override { withFont = "Iosevka"; })
     noto-fonts-cjk
   ];
 

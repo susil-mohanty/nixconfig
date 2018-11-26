@@ -2,7 +2,7 @@
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
 (setq fontsize (string-to-number (shell-command-to-string "fontsize")))
-(setq doom-font (font-spec :family "Fira Code" :size fontsize))
+(setq doom-font (font-spec :family "Iosevka" :size fontsize))
 
 (doom! :feature
       ;debugger          ; FIXME stepping through code, to help you add bugs
