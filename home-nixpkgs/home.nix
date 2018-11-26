@@ -189,26 +189,6 @@ in
     xrender-sync-fence = true;
   '';
 
-  systemd.user.services.emacs-daemon = {
-     Unit = {
-       Description = "Emacs text editor";
-       Documentation = "info:emacs man:emacs(1) https://gnu.org/software/emacs/";
-       After = [ "hm-graphical-session.target" ];
-     };
-
-     Service = {
-       Type = "simple";
-       ExecStart = "${pkgs.stdenv.shell} -l -c 'exec %h/.nix-profile/bin/emacs --fg-daemon'";
-       ExecStop = "%h/.nix-profile/bin/emacsclient --eval '(kill-emacs)'";
-       PassEnvironment = "DISPLAY";
-       Restart = "on-failure";
-     };
-
-     Install = {
-       WantedBy = [ "default.target" ];
-     };
-  };
-
   systemd.user.services.dropbox = {
     Service = {
       Type = "simple";

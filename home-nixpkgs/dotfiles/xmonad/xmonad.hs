@@ -34,7 +34,7 @@ myConfig = defaultConfig
           spawnOn "web" "Discord"
           spawnOn "web" "weechat"
           spawnOn "code1" "urxvt"
-          spawnOn "code1" "emacsclient -c"
+          spawnOn "code1" "emacs --eval '(server-start)'"
       , manageHook = manageSpawn
       , logHook = dynamicLog
       , layoutHook = mylayout
