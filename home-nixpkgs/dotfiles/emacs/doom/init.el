@@ -66,7 +66,7 @@
 
        :tools
        editorconfig      ; let someone else argue about tabs vs spaces
-      ;ein               ; tame Jupyter notebooks with emacs
+      ein               ; tame Jupyter notebooks with emacs
       ;gist              ; interacting with github gists
       ;macos             ; MacOS-specific commands
       ;make              ; run make tasks from Emacs
@@ -110,6 +110,7 @@
        +babel           ; running code in org
        +capture         ; org-capture in and outside of Emacs
        +export          ; Exporting org to whatever you want
+       +ipython
        +present)
       ;perl              ; write code no one else can comprehend
       ;php               ; perl's insecure younger brother

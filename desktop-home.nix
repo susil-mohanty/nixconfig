@@ -58,7 +58,7 @@
               pillow
               pip
               scikitlearn
-              tensorflowWithCuda
+              # tensorflowWithCuda # doesn't work with python3.7
             ]));
     in {
       displayName = "Python 3 for machine learning";

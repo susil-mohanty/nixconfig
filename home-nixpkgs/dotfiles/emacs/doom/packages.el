@@ -17,3 +17,4 @@
 (package! terraform-mode)
 (package! weechat)
 (package! reason-mode)
+(package! elvish-mode)

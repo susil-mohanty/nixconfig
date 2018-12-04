@@ -7,8 +7,6 @@ error_notify() {
 
 trap 'error_notify' ERR
 
-git pull
-
 pushd nixpkgs
 git fetch --all
 git checkout system

@@ -49,6 +49,7 @@ with builtins;
     alsaUtils
     curl
     direnv
+    elvish
     firefox
     fzf
     git
