@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-error_notify() {
-  notify-send 'Update failed!'
-}
-
-trap 'error_notify' ERR
-
 pushd nixpkgs
 git fetch --all
 git checkout system
@@ -23,12 +17,3 @@ pushd home-nixpkgs/doom-emacs
 git checkout develop
 git pull origin develop
 popd
-
-sudo nixos-rebuild switch
-
-home-manager switch
-
-~/.emacs.d/bin/doom -y u
-~/.emacs.d/bin/doom -y re
-
-notify-send "Update complete!"
