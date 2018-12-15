@@ -14,7 +14,7 @@ in
   pam.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
   };
-  home.sessionVariables.EDITOR = "emacsclient -c";
+  home.sessionVariables.EDITOR = "emacsclient -c -s /tmp/emacs$(id -u)/server";
   home.sessionVariables.LESS = "-R";
   home.sessionVariables._JAVA_AWT_WM_NONREPARENTING = "1";
 

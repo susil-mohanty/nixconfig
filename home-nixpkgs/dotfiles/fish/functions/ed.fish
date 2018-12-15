@@ -1,4 +1,4 @@
 function ed
-    emacsclient -c $argv &
+    eval $EDITOR $argv &
     disown
 end
