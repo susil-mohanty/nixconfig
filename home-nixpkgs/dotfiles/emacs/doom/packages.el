@@ -9,6 +9,8 @@
 (package! evil-easymotion)
 (package! flycheck-jest)
 (package! indium)
+(package! lsp-mode)
+(package! lsp-ui)
 (package! mocha)
 (package! mocha-snippets)
 (package! org-journal)

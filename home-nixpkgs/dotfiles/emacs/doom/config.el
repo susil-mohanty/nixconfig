@@ -49,3 +49,8 @@
                    :ttl t))
 
 (setq evil-escape-key-sequence "hh")
+
+(require 'lsp)
+(require 'lsp-clients)
+(add-hook 'js2-mode-hook #'lsp)
+(add-hook 'python-mode 'lsp)

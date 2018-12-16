@@ -56,6 +56,7 @@ with builtins;
     gnupg
     htop
     jq
+    lm_sensors
     nix-index
     nmon
     pass
