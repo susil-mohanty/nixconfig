@@ -19,3 +19,5 @@
 (package! solidity-mode)
 (package! terraform-mode)
 (package! weechat)
+(package! lsp-mode)
+(package! lsp-ui)
