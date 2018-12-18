@@ -12,6 +12,8 @@ with builtins;
   ];
   nix.autoOptimiseStore = true;
   nix.buildCores = 0;
+  nix.daemonNiceLevel = 5;
+
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
