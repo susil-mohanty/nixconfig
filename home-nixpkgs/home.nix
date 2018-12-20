@@ -165,6 +165,9 @@ in
       merge = {
         ff = "only";
       };
+      rebase = {
+        autostash = true;
+      };
     };
   };
 
