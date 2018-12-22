@@ -14,6 +14,8 @@
     fsType = "ext4";
   };
 
+  boot.kernelModules = [ "k10temp" "nct6775" ];
+
   networking.hostName = "lulus";
 
   powerManagement.cpuFreqGovernor = "performance";
