@@ -46,6 +46,7 @@
     631    # cups
     11223  # jupyter
     8388   # shadowsocks
+    9004   # transmission
   ];
 
   services.jupyter.enable = true;
