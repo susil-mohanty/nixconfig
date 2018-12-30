@@ -3,12 +3,8 @@
 let updateDoom = ''
     .emacs.d/bin/doom -y re
   '';
-  fontsize = pkgs.writeShellScriptBin "fontsize" ''
-    info="$(xrandr -q|grep -w 'connected')"
-    pixels="$(echo $info|perl -pe 's|.*? (\d+)x.*|\1|')"
-    length="$(echo $info|perl -pe 's|.*? (\d+)mm.*|\1|')"
-    awk "BEGIN {print int(2.845e-3 * $pixels - 5.015e-3 * $length + 9.937 + 0.5)}"
-  '';
+  fontsize = pkgs.writeShellScriptBin "fontsize" ./bin/fontsize;
+  org-git-sync = pkgs.writeShellScriptBin "org-git-sync" ./bin/org-git-sync;
 in
 {
   pam.sessionVariables = {
@@ -39,6 +35,7 @@ in
     libnotify
     ncdu
     nmap
+    org-git-sync
     pavucontrol
     ripgrep
     rxvt_unicode_with-plugins

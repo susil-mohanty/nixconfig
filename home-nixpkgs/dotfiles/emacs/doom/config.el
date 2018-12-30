@@ -5,6 +5,8 @@
 
 (setq org-journal-dir "~/Dropbox/jrn")
 (setq org-journal-date-format "%Y-%m-%d %A")
+(setq org-agenda-files (quote ("~/org/my")))
+
 (setq mocha-snippets-use-fat-arrows t)
 ;; coulnd't get this to work yet
 ;; (with-eval-after-load 'flycheck
