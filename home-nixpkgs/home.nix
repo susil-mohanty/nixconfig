@@ -200,4 +200,20 @@ in
       WantedBy = [ "default.target" ];
     };
   };
+
+ systemd.user.services.org-git-sync = {
+    Service = {
+      Type = "oneshot";
+      Environment = "PATH=${pkgs.nix}/bin";
+      ExecStart = "${org-git-sync}/bin/org-git-sync";
+    };
+  };
+  systemd.user.timers.org-git-sync = {
+    Timer = {
+      OnCalendar = "00/1:59";
+    };
+    Install = {
+      WantedBy = [ "timers.target" ];
+    };
+  };
 }

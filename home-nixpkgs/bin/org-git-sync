@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p git
 # Add org file changes to the repository
 REPOS="my"
 
@@ -10,5 +11,6 @@ do
     git ls-files --deleted -z | xargs -0 git rm >/dev/null 2>&1
     # Add new files
     git add . >/dev/null 2>&1
-    git commit --no-gpg-sign -m "auto commit $(date)"
+    # only try commit if there are changes
+    git diff-index --quiet HEAD || git commit --no-gpg-sign -m "auto commit $(date)"
 done
