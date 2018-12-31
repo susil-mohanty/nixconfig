@@ -5,6 +5,7 @@ let updateDoom = ''
   '';
   fontsize = pkgs.writeShellScriptBin "fontsize" ./bin/fontsize;
   org-git-sync = pkgs.writeShellScriptBin "org-git-sync" ./bin/org-git-sync;
+  git-sync = pkgs.writeShellScriptBin "git-sync" ./bin/git-sync;
 in
 {
   pam.sessionVariables = {
@@ -24,6 +25,7 @@ in
     fd                      # find
     feh
     fontsize
+    git-sync
     gmrun
     gnome3.nautilus
     goldendict
