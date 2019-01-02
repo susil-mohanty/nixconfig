@@ -19,10 +19,8 @@
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
-       (company          ; the ultimate code completion backend
-        +auto)           ; as-you-type code completion
-       (helm             ; the *other* search engine for love and life
-        +fuzzy)          ; enable fuzzy search backend for helm
+       company          ; the ultimate code completion backend
+       helm             ; the *other* search engine for love and life
       ;ido               ; the other *other* search engine...
       ;(ivy              ; a search engine for love and life
       ; +fuzzy)          ; enable fuzzy search backend for ivy
@@ -153,5 +151,4 @@
        ;; a Spacemacs-inspired keybinding scheme, a custom yasnippet library,
        ;; and additional ex commands for evil-mode. Use it as a reference for
        ;; your own modules.
-       (default +bindings +snippets +evil-commands))
-
+       (default +bindings +snippets))

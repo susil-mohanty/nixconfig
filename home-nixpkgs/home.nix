@@ -18,6 +18,7 @@ in
   home.keyboard.variant = "colemak";
 
   home.packages = with pkgs; [
+    ag
     chromium
     discord
     evince
@@ -145,7 +146,7 @@ in
         pkgs.jre  # plantum
       ]);
       postFixup = ''
-      wrapProgram $out/bin/emacs --set SHELL ${pkgs.bash}/bin/bash
+        wrapProgram $out/bin/emacs --set SHELL ${pkgs.bash}/bin/bash
       '';
     });
   };
