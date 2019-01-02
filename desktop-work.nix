@@ -7,9 +7,8 @@
      ./pc-common.nix
     ];
 
-  # USB wifi
   boot.extraModulePackages = [
-     (pkgs.callPackage ./overlays/rtl8821au { kernel = pkgs.linuxPackages.kernel; })
+     pkgs.linuxPackages.rtl8821au  # USB wifi
   ];
 
   networking.hostName = "mas";
