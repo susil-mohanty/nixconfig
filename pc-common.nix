@@ -78,6 +78,8 @@ with builtins;
 
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
+  services.avahi.publish.enable = true;
+  services.avahi.publish.addresses = true;
 
   services.fstrim.enable = true;
   services.locate.enable = true;
