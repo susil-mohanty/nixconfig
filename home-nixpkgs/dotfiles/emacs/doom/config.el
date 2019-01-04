@@ -56,3 +56,9 @@
 (require 'lsp-clients)
 (add-hook 'js2-mode-hook #'lsp)
 (add-hook 'python-mode 'lsp)
+
+(load "~/r/pavpanchekha/keylogger.el/keylogger.el")
+(setq keylogger-filename "~/r/pavpanchekha/keylogger.el/keys.el")
+(keylogger-load)
+(keylogger-start)
+(keylogger-autosave)
