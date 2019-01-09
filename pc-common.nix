@@ -29,7 +29,12 @@ with builtins;
 
     # UHK
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", MODE:="0666"
+    # pok3r
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d9", ATTRS{idProduct}=="[0-1]141", MODE:="0666"
+
+    # stlink debugger
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE:="0666"
+
   '';
 
   fileSystems."/tmp" = {
