@@ -215,11 +215,19 @@ in
     };
   };
   systemd.user.timers.org-git-sync = {
-    Timer = {
-      OnCalendar = "00/1:59";
+    Timer = { OnCalendar = "00/1:59"; };
+    Install = { WantedBy = [ "timers.target" ]; };
+  };
+
+ systemd.user.services.git-sync = {
+    Service = {
+      Type = "oneshot";
+      Environment = "PATH=${pkgs.nix}/bin";
+      ExecStart = "${git-sync}/bin/git-sync";
     };
-    Install = {
-      WantedBy = [ "timers.target" ];
-    };
+  };
+  systemd.user.timers.git-sync = {
+    Timer = { OnCalendar = "00/1:00"; };
+    Install = { WantedBy = [ "timers.target" ]; };
   };
 }
