@@ -177,6 +177,7 @@ in
     enable = true;
     shellAliases = with pkgs; {
       l = "exa -lah";
+      f = "rg --files";
       pcat = "${python3Packages.pygments}/bin/pygmentize";
       so = "pactl set-default-sink (pacmd list-sinks | awk \\\'/name:.*usb/{if (a != \"\") print a;} {a=$NF}\\\')";
       si = "pactl set-default-sink (pacmd list-sinks | awk \\\'/name:.*pci/{if (a != \"\") print a;} {a=$NF}\\\')";
