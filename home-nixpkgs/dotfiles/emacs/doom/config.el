@@ -62,3 +62,7 @@
 (keylogger-load)
 (keylogger-start)
 (keylogger-autosave)
+
+(require 'evil-easymotion)
+(evilem-make-motion
+ evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
