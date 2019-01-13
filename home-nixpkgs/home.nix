@@ -29,6 +29,7 @@ in
     git-sync
     gmrun
     gnome3.nautilus
+    gnome3.dconf
     goldendict
     google-chrome
     graphviz                # for plantuml
