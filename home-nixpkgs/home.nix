@@ -8,6 +8,11 @@ let updateDoom = ''
   git-sync = pkgs.writeShellScriptBin "git-sync" ./bin/git-sync;
 in
 {
+
+  imports = [
+    ./git.nix
+  ];
+
   pam.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
   };
@@ -153,26 +158,6 @@ in
         wrapProgram $out/bin/emacs --set SHELL ${pkgs.bash}/bin/bash
       '';
     });
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "sveitser";
-    userEmail = "sveitser@gmail.com";
-    signing.key = "0xB24B3D9AD2157945";
-    signing.signByDefault = true;
-    ignores = [ ".projectile" ".indium.json" ];
-    extraConfig = {
-      pull = {
-        rebase = true;
-      };
-      merge = {
-        ff = "only";
-      };
-      rebase = {
-        autostash = true;
-      };
-    };
   };
 
   programs.direnv.enable = true;

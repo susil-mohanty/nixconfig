@@ -66,3 +66,7 @@
 (require 'evil-easymotion)
 (evilem-make-motion
  evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
+
+(use-package mixed-pitch
+  :hook
+  (org-mode . mixed-pitch-mode))
