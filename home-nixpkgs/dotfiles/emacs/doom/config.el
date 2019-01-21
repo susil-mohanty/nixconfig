@@ -70,3 +70,5 @@
 (use-package mixed-pitch
   :hook
   (org-mode . mixed-pitch-mode))
+
+(add-hook 'after-save-hook 'magit-after-save-refresh-status)
