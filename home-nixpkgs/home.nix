@@ -203,7 +203,7 @@ in
     };
   };
   systemd.user.timers.org-git-sync = {
-    Timer = { OnCalendar = "00/1:59"; };
+    Timer = { OnCalendar = "*:14/15"; Persistent = true; };
     Install = { WantedBy = [ "timers.target" ]; };
   };
 
@@ -215,7 +215,7 @@ in
     };
   };
   systemd.user.timers.git-sync = {
-    Timer = { OnCalendar = "00/1:00"; };
+    Timer = { OnCalendar = "*:0/15"; Persistent = true; };
     Install = { WantedBy = [ "timers.target" ]; };
   };
 }
