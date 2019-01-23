@@ -149,12 +149,12 @@ in
 
     package = pkgs.emacs.overrideAttrs (old: rec {
       wrapperPath = with pkgs.stdenv.lib; makeBinPath ([
-        pkgs.ispell # needed?
+        pkgs.ispell
         pkgs.plantuml
         pkgs.jre  # plantum
       ]);
       postFixup = ''
-        wrapProgram $out/bin/emacs --set SHELL ${pkgs.bash}/bin/bash
+        wrapProgram $out/bin/emacs --prefix PATH : ${wrapperPath} --set SHELL ${pkgs.bash}/bin/bash
       '';
     });
   };
