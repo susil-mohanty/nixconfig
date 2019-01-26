@@ -12,5 +12,5 @@ do
     # Add new files
     git add . >/dev/null 2>&1
     # only try commit if there are changes
-    git diff-index --quiet HEAD || git commit --no-gpg-sign -m "auto commit $(date)"
+    git diff-index --quiet HEAD || git commit --no-gpg-sign -m "auto on $(hostname) at $(date)"
 done
