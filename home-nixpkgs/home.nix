@@ -86,7 +86,7 @@ in
 
   # doom-emacs installs packages into ~/.emacs.d so we symlink directly
   home.activation.linkDoom = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-    ln -sf "${config.home.homeDirectory}/.nixpkgs/doom-emacs" $HOME/.emacs.d
+    ln -sfT "${config.home.homeDirectory}/.nixpkgs/doom-emacs" $HOME/.emacs.d
   '';
 
   # XXX make fails because this is in the nix store.
