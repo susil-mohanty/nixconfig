@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 let ssPort = 22334;
 in
@@ -6,26 +6,33 @@ in
 
   imports = [ ./hardware-configuration.nix ];
   environment.systemPackages = with pkgs; [
-    vim
     git
+    htop
+    nmon
+    tmux
+    vim
   ];
 
   boot.cleanTmpDir = true;
+
   networking.hostName = "machine";
   networking.firewall.allowPing = true;
   networking.firewall.allowedTCPPorts = [ ssPort ];
+
   services.openssh.enable = true;
+  services.openssh.passwordAuthentication = false;
+  services.fail2ban.enable = true;
 
   security.pam.services.sudo.sshAgentAuth = true;
   security.pam.enableSSHAgentAuth = true;
   programs.fish.enable = true;
 
-  
+  services.weechat.enable = true;
+
   services.shadowsocks.port = ssPort;
   services.shadowsocks.enable = true;
   services.shadowsocks.passwordFile = /etc/nixos/secrets/shadow.txt;
   services.shadowsocks.encryptionMethod = "aes-256-ctr";
-
 
   users.users.lulu = {
     isNormalUser = true;
