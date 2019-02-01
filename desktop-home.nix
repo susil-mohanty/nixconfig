@@ -43,6 +43,8 @@
   services.printing.browsing = true;
   services.printing.listenAddresses = [ "*:631" ];
 
+  programs.mosh.enable = true;
+
   networking.firewall.allowedTCPPorts = [
     631    # cups
     11223  # jupyter

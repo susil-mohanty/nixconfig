@@ -42,6 +42,7 @@ in
     haskellPackages.xmobar
     jetbrains.idea-ultimate
     libnotify
+    mosh
     ncdu
     nmap
     org-git-sync
