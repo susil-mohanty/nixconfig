@@ -15,3 +15,6 @@ URxvt.keysym.C-equal:  font-size:reset
 URxvt.keysym.C-slash:  font-size:show
 
 URxvt*.alt-font-width: true
+
+urxvt.urlLauncher: /run/current-system/sw/bin/xdg-open
+urxvt.saveLines: 1000000
