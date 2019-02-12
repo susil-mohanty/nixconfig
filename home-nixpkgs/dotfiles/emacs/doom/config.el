@@ -60,7 +60,13 @@
 (evilem-make-motion
  evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
 
-;; (add-hook 'org-mode-hook '+write-mode) ;; all buffers become variable face
+;; Prevent +write-mode from causing variable pitch fonts in all buffers.
+(defun fix-solaire-mode ()
+  (mixed-pitch-mode -1)
+  (solaire-mode -1)
+  (solaire-mode +1)
+  (mixed-pitch-mode +1))
+(add-hook 'org-mode-hook #'fix-solaire-mode)
 
 (add-hook 'after-save-hook 'magit-after-save-refresh-status)
 (require 'org-protocol)
