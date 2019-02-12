@@ -14,4 +14,4 @@ home-manager switch
 ~/.emacs.d/bin/doom -y u
 ~/.emacs.d/bin/doom -y re
 
-notify-send "Update complete!"
+notify-send "Update complete! Reboot now if this is a CUDA box!"
