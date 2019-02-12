@@ -54,21 +54,13 @@
 
 (require 'lsp)
 (require 'lsp-clients)
-(add-hook 'js2-mode-hook #'lsp)
 (add-hook 'python-mode 'lsp)
-
-(load "~/r/pavpanchekha/keylogger.el/keylogger.el")
-(setq keylogger-filename "~/r/pavpanchekha/keylogger.el/keys.el")
-(keylogger-load)
-(keylogger-start)
-(keylogger-autosave)
 
 (require 'evil-easymotion)
 (evilem-make-motion
  evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
 
-(use-package mixed-pitch
-  :hook
-  (org-mode . mixed-pitch-mode))
+;; (add-hook 'org-mode-hook '+write-mode) ;; all buffers become variable face
 
 (add-hook 'after-save-hook 'magit-after-save-refresh-status)
+(require 'org-protocol)

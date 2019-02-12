@@ -153,6 +153,8 @@ in
         pkgs.ispell
         pkgs.plantuml
         pkgs.jre  # plantum
+        pkgs.wordnet
+        pkgs.languagetool
       ]);
       postFixup = ''
         wrapProgram $out/bin/emacs --prefix PATH : ${wrapperPath} --set SHELL ${pkgs.bash}/bin/bash

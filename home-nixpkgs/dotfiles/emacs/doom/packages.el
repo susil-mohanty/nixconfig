@@ -13,7 +13,6 @@
 (package! lsp-mode)
 (package! lsp-ui)
 (package! lsp-ui)
-(package! mixed-pitch)
 (package! mocha)
 (package! mocha-snippets)
 (package! org-journal)
