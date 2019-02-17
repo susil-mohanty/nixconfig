@@ -14,6 +14,9 @@ with builtins;
   nix.buildCores = 0;
   nix.daemonNiceLevel = 5;
 
+  nixpkgs.overlays = [
+    (import ./home-nixpkgs/overlays/python.nix)
+  ];
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
