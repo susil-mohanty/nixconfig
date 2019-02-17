@@ -60,7 +60,7 @@
               Keras
               ipykernel
               matplotlib
-              pandas
+              # pandas # 2019 02 17: broken in nixkpgs
               pillow
               pip
               scikitlearn
