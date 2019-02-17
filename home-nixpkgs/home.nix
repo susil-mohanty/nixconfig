@@ -150,6 +150,7 @@ in
 
     package = pkgs.emacs.overrideAttrs (old: rec {
       wrapperPath = with pkgs.stdenv.lib; makeBinPath ([
+        pkgs.gcc    # to compile emacsql
         pkgs.ispell
         pkgs.plantuml
         pkgs.jre  # plantum
