@@ -28,7 +28,7 @@ myConfig = defaultConfig
       , focusedBorderColor = "#FF5C8F"
       , normalBorderColor = "#282A36"
       , borderWidth = 3
-      , terminal = "urxvtc"
+      , terminal = "urxvt"
       , startupHook = do
           spawnOn "web" "firefox"
           spawnOn "web" "Discord"

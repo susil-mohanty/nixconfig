@@ -15,5 +15,3 @@ feh --bg-fill local/space-wallpaper.jpg  > /dev/null 2>&1
 # calculate fontsize that fits screen
 FS=$(fontsize)
 echo "URxvt.font: xft:Iosevka:pixelsize=${FS},xft:DejaVu Sans Mono:pixelsize=${FS}" | xrdb -merge
-
-urxvtd -q -f -o
