@@ -23,6 +23,10 @@ git submodules init
 ln -s /etc/nixos/home-nixpkgs ~/.nixpkgs
 ln -s /etc/nixos/nixpkgs ~/nixpkgs
 
+# for overlay to work
+mkdir -p ~/.config/nixpkgs/
+ln -s /etc/nixos/home-nixpkgs/overlays ~/.config/nixpkgs
+
 mv configuration.nix{,.bkp}
 ln -s this-machines-config.nix configuration.nix
 

@@ -9,6 +9,7 @@ with builtins;
   nix.nixPath = [
     "nixpkgs=/etc/nixos/nixpkgs"
     "nixos-config=/etc/nixos/configuration.nix"
+    "nixpkgs-overlays=/etc/nixos/overlays-compat/"
   ];
   nix.autoOptimiseStore = true;
   nix.buildCores = 0;
