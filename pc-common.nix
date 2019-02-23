@@ -39,6 +39,8 @@ with builtins;
     # stlink debugger
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE:="0666"
 
+    # arduino micro
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="8037", MODE:="0666"
   '';
 
   fileSystems."/tmp" = {
