@@ -11,4 +11,5 @@ self: super: let
   in pypkgs.override { inherit packageOverrides; };
 in {
   python37 = overridePython super.python37;
+  python36 = overridePython super.python36;
 }
