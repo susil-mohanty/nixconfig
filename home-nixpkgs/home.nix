@@ -26,6 +26,7 @@ in
     ag
     chromium
     discord
+    dropbox-cli
     evince
     exa                     # ls
     fd                      # find
