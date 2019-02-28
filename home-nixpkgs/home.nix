@@ -157,6 +157,7 @@ in
         pkgs.jre  # plantum
         pkgs.wordnet
         pkgs.languagetool
+        pkgs.libvterm
       ]);
       postFixup = ''
         wrapProgram $out/bin/emacs --prefix PATH : ${wrapperPath} --set SHELL ${pkgs.bash}/bin/bash
