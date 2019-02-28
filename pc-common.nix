@@ -98,6 +98,13 @@ with builtins;
   services.pcscd.enable = true;
   services.resolved.enable = true;
 
+  # very ugly but whatever
+  services.autossh.sessions = [{
+    extraArguments = "-NL 8001:localhost:8001 machine";
+    monitoringPort = 23333; name = "machine"; user = "lulu";
+  }];
+  systemd.services.autossh-machine.environment = { SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh"; };
+
   fonts.fonts = with pkgs; [
     # Both needed to have ligatures work with doom-emacs.
     fira-code-symbols
