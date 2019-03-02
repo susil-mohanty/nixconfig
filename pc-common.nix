@@ -101,10 +101,11 @@ with builtins;
   # very ugly but whatever
   services.autossh.sessions = [{
     extraArguments = "-NL 8001:localhost:8001 machine";
-    monitoringPort = 23333; name = "machine"; user = "lulu";
+    # monitoringPort = 23335;  # would need different port for each box
+    name = "machine"; user = "lulu";
   }];
   systemd.services.autossh-machine.environment = { SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh"; };
-  systemd.services.autossh-machine.serviceConfig.RestartSecs = "300";
+  systemd.services.autossh-machine.serviceConfig.RestartSec = "5min";
 
   fonts.fonts = with pkgs; [
     # Both needed to have ligatures work with doom-emacs.
