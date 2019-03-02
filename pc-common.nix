@@ -104,6 +104,7 @@ with builtins;
     monitoringPort = 23333; name = "machine"; user = "lulu";
   }];
   systemd.services.autossh-machine.environment = { SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh"; };
+  systemd.services.autossh-machine.serviceConfig.RestartSecs = "300";
 
   fonts.fonts = with pkgs; [
     # Both needed to have ligatures work with doom-emacs.
