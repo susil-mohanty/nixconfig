@@ -53,8 +53,8 @@ with builtins;
   i18n = {
      consoleKeyMap = "colemak/colemak";
      defaultLocale = "en_US.UTF-8";
-     # inputMethod.enabled = "fcitx";
-     # inputMethod.fcitx.engines = [ pkgs.fcitx-engines.libpinyin ];
+     inputMethod.enabled = "fcitx";
+     inputMethod.fcitx.engines = [ pkgs.fcitx-engines.libpinyin ];
   };
 
   time.timeZone = "Asia/Hong_Kong";
