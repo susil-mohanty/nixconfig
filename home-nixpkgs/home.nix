@@ -138,11 +138,11 @@ in
       font = "Noto Sans 36"; }; };
 
   services.flameshot.enable = true;     # screeshots
-  services.udiskie = {
-    enable = true;
-    notify = false;
-    tray = "never";
-  };
+  # services.udiskie = {  # broken as of 2019-03-07
+  #   enable = true;
+  #   notify = false;
+  #   tray = "never";
+  # };
 
   programs.home-manager.enable = true;
   programs.browserpass.enable = true;
