@@ -104,8 +104,13 @@ with builtins;
     # monitoringPort = 23335;  # would need different port for each box
     name = "machine"; user = "lulu";
   }];
-  systemd.services.autossh-machine.environment = { SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh"; };
+  systemd.services.autossh-machine.environment = {
+    SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh";
+    AUTOSSH_MAXSTART = "1";
+  };
   systemd.services.autossh-machine.serviceConfig.RestartSec = "5min";
+  systemd.services.autossh-machine.serviceConfig.Restart = pkgs.lib.mkForce "always";
+  systemd.services.autossh-machine.serviceConfig.ExecStartPre = "${pkgs.bash}/bin/bash -cv \"test -S $SSH_AUTH_SOCK\"";
 
   fonts.fonts = with pkgs; [
     # Both needed to have ligatures work with doom-emacs.
