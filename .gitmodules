@@ -9,3 +9,6 @@
 	path = home-nixpkgs/doom-emacs
 	url = https://github.com/hlissner/doom-emacs
 	branch = develop
+[submodule "home-nixpkgs/overlays"]
+	path = home-nixpkgs/overlays
+	url = https://github.com/sveitser/nixpkgs-overlays

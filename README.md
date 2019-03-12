@@ -16,7 +16,8 @@ cd /etc/nixos
 sudo chown -R $USER .
 git init
 git remote add origin git@github.com:sveitser/nixconfig.git
-git pull origin master
+git pull --recurse-submodules origin master
+
 # To save time, copy nixpkgs repo to /etc/nixos/nixpkgs from somewhere close.
 git submodules init
 
