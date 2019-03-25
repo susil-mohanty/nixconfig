@@ -4,6 +4,7 @@
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
 (setq org-directory "~/org/my")
+(setq org-default-notes-file "notes.org")
 (setq org-journal-dir "~/Dropbox/jrn")
 (setq org-journal-date-format "%Y-%m-%d %A")
 (setq org-agenda-files (quote ("~/org/my")))
