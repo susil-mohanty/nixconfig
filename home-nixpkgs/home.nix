@@ -150,14 +150,15 @@ in
     enable = true;
 
     package = pkgs.emacs.overrideAttrs (old: rec {
-      wrapperPath = with pkgs.stdenv.lib; makeBinPath ([
-        pkgs.gcc    # to compile emacsql
-        pkgs.ispell
-        pkgs.plantuml
-        pkgs.jre  # plantum
-        pkgs.wordnet
-        pkgs.languagetool
-        pkgs.libvterm
+      wrapperPath = with pkgs; stdenv.lib.makeBinPath ([
+        gcc        # to compile emacsql
+        aspell
+        aspellDicts.en
+        plantuml
+        jre        # for plantuml
+        wordnet
+        languagetool
+        libvterm   # doesn't work yet
       ]);
       postFixup = ''
         wrapProgram $out/bin/emacs --prefix PATH : ${wrapperPath} --set SHELL ${pkgs.bash}/bin/bash
