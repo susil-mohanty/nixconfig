@@ -27,10 +27,6 @@
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
-(require 'lsp)
-(require 'lsp-clients)
-(add-hook 'python-mode 'lsp)
-
 (require 'evil-easymotion)
 (evilem-make-motion
  evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
