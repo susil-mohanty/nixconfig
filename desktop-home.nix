@@ -82,8 +82,11 @@
 
   services.transmission.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.extraUsers.lulu.extraGroups = [ "transmission" ];
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  users.extraUsers.lulu.extraGroups = [ "transmission"  "vboxusers" ];
+
   users.extraUsers.dong = {
      isNormalUser = true;
      uid = 1011;
