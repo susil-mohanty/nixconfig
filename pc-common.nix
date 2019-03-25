@@ -183,7 +183,7 @@ with builtins;
   users.extraUsers.lulu = {
      isNormalUser = true;
      uid = 1000;
-     extraGroups = [ "audio" "wheel" "docker" ];
+     extraGroups = [ "audio" "wheel" "docker" "dialout" ];
      shell = pkgs.fish;
   };
 
