@@ -94,7 +94,10 @@ with builtins;
 
   services.fstrim.enable = true;
   services.locate.enable = true;
+
   services.openssh.enable = true;
+  services.openssh.passwordAuthentication = false;
+
   services.pcscd.enable = true;
   services.resolved.enable = true;
 
