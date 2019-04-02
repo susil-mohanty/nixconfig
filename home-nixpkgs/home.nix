@@ -23,6 +23,7 @@ in
   home.keyboard.variant = "colemak";
 
   home.packages = with pkgs; [
+    lorri
     ag
     chromium
     discord

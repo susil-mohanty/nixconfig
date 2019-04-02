@@ -17,6 +17,7 @@ with builtins;
 
   nixpkgs.overlays = [
     (import ./home-nixpkgs/overlays/python.nix)
+    (import ./home-nixpkgs/overlays/lorri.nix)
   ];
   nixpkgs.config.allowUnfree = true;
 
