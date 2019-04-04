@@ -33,7 +33,7 @@ ln -s /etc/nixos/nixpkgs ~/.nix-defexpr
 
 sudo nixos-rebuild -I nixpkgs=/etc/nixos/nixpkgs -I nixos-config=/etc/nixos/configuration.nix switch
 
-nix-shell ~/.nixpkgs/home-manager -A install
+nix-shell ~/.config/nixpkgs/home-manager -A install
 home-manager switch
 
 # Probably best to reboot at this point.
