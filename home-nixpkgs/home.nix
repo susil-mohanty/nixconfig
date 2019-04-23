@@ -109,6 +109,7 @@ in
   home.file.".config/fish/functions/fish_title.fish".source = ./dotfiles/fish/functions/fish_title.fish;
 
   home.file.".config/fish/functions/nix-ipython.fish".source = ./dotfiles/fish/functions/nix-ipython.fish;
+  home.file.".config/fish/functions/py.fish".source = ./dotfiles/fish/functions/py.fish;
   home.file.".config/fish/functions/pless.fish".source = ./dotfiles/fish/functions/pless.fish;
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
   home.file.".config/fish/functions/fish_user_key_bindings.fish".source = ./dotfiles/fish/functions/fish_user_key_bindings.fish;

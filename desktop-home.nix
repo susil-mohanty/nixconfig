@@ -82,8 +82,9 @@
 
   services.transmission.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  # Why does this compile locally now?
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   users.extraUsers.lulu.extraGroups = [ "transmission"  "vboxusers" ];
 
