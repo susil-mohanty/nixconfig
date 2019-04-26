@@ -15,6 +15,7 @@ in
 
   pam.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
+    BROWSER = "firefox";
   };
   home.sessionVariables.EDITOR = "emacsclient -c -s /tmp/emacs$(id -u)/server";
   home.sessionVariables.LESS = "-R";
