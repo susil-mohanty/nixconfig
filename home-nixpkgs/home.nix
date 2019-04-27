@@ -118,6 +118,35 @@ in
   home.file.".config/fish/functions/ed.fish".source = ./dotfiles/fish/functions/ed.fish;
   home.file.".config/fish/functions/gcl.fish".source = ./dotfiles/fish/functions/gcl.fish;
 
+  # lorri
+  home.file.".direnvrc".text = ''
+    use_nix() {
+      eval "$(lorri direnv)"
+      systemctl --user start lorri@$(systemd-escape $(pwd))
+    }
+  '';
+  systemd.user.services."lorri@" = {
+    Unit = {
+      ConditionPathExists = "%I";
+      ConditionUser = "!@system";
+      Description = "Lorri watch";
+    };
+    Service = {
+      Environment = [
+        "LOCALE_ARCHIVE=${pkgs.glibcLocales}/lib/locale/locale-archive"
+        "TZ=Asia/Hong_Kong"
+        "TZDIR=${pkgs.tzdata}/share/zoneinfo"
+        "PATH=/home/lulu/bin:/run/wrappers/bin:/home/lulu/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/etc/profiles/per-user/lulu/bin"
+      ];
+      ExecStart = "${pkgs.lorri}/bin/lorri -vvvv watch";
+      PrivateTmp = "true";
+      ProtectSystem = "full";
+      Resart = "on-failure";
+      WorkingDirectory = "%I";
+    };
+  };
+
+
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 36000;
