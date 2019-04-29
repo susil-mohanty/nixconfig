@@ -121,8 +121,12 @@ in
   # lorri
   home.file.".direnvrc".text = ''
     use_nix() {
+      echo "direnv: using lorri"
       eval "$(lorri direnv)"
-      systemctl --user start lorri@$(systemd-escape $(pwd))
+      eval "$shelHook"
+      local service="lorri@$(systemd-escape $(pwd))"
+      systemctl --user start $service
+      echo "Started systemd service $service"
     }
   '';
   systemd.user.services."lorri@" = {
@@ -138,10 +142,10 @@ in
         "TZDIR=${pkgs.tzdata}/share/zoneinfo"
         "PATH=/home/lulu/bin:/run/wrappers/bin:/home/lulu/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/etc/profiles/per-user/lulu/bin"
       ];
-      ExecStart = "${pkgs.lorri}/bin/lorri -vvvv watch";
+      ExecStart = "${pkgs.lorri}/bin/lorri -v watch";
       PrivateTmp = "true";
       ProtectSystem = "full";
-      Resart = "on-failure";
+      Restart = "on-failure";
       WorkingDirectory = "%I";
     };
   };
