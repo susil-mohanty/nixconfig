@@ -123,7 +123,7 @@ in
     use_nix() {
       echo "direnv: using lorri"
       eval "$(lorri direnv)"
-      eval "$shelHook"
+      eval "$shellHook"
       local service="lorri@$(systemd-escape $(pwd))"
       systemctl --user start $service
       echo "Started systemd service $service"
