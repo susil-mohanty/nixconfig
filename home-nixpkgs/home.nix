@@ -50,6 +50,7 @@ in
     nmap
     org-git-sync
     pavucontrol
+    pulseeffects
     ripgrep
     rxvt_unicode_with-plugins
     spotify
