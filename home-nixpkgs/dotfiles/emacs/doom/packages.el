@@ -8,3 +8,4 @@
 (package! mocha-snippets)
 (package! org-journal)
 (package! prettier-js)
+(package! py-isort)

@@ -16,8 +16,6 @@
 (add-hook 'typescript-mode-hook #'prettier-js-mode)
 (add-hook 'python-mode-hook 'blacken-mode)
 
-(direnv-mode)
-
 (load-theme 'doom-dracula t)
 
 ;; Enable flashing mode-line on errors

@@ -62,6 +62,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
+       direnv
        ;;ansible
        ;;docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
