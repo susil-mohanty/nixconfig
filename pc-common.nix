@@ -130,14 +130,7 @@ with builtins;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.daemon.config = {
     flat-volumes = "no";
-    resample-method = "src-sinc-best-quality";
-    default-sample-format = "s24le";
-    default-sample-rate = "96000";
   };
-  hardware.pulseaudio.extraConfig = ''
-    load-module module-equalizer-sink
-    load-module module-dbus-protocol
-  '';
 
   services.xserver = {
      enable = true;
