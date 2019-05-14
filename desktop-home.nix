@@ -20,7 +20,7 @@
 
   powerManagement.cpuFreqGovernor = "performance";
 
-  services.xserver.videoDrivers = [ "nvidia" ];  # Required for CUDA apps.
+  services.xserver.videoDrivers = [ "nvidiaBeta" ];  # Required for CUDA apps.
   services.xserver.wacom.enable = true;
 
   # Prevents most tearing.
