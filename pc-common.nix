@@ -81,7 +81,10 @@ with builtins;
     usbutils
     vim
     wget
+    gnome3.adwaita-icon-theme
   ];
+
+  xdg.icons.enable = true;
 
   programs.bash.enableCompletion = true;
   programs.fish.enable = true;
