@@ -6,6 +6,7 @@ let updateDoom = ''
   fontsize = pkgs.writeShellScriptBin "fontsize" ./bin/fontsize;
   org-git-sync = pkgs.writeShellScriptBin "org-git-sync" ./bin/org-git-sync;
   git-sync = pkgs.writeShellScriptBin "git-sync" ./bin/git-sync;
+  clean-nix-store = pkgs.writeShellScriptBin "clean-nix-store" ./bin/clean-nix-store;
 in
 {
 
@@ -27,6 +28,7 @@ in
     lorri
     ag
     chromium
+    clean-nix-store
     discord
     dropbox-cli
     evince
