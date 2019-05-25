@@ -12,8 +12,6 @@
   ];
 
   networking.hostName = "mas";
-  networking.networkmanager.enable = true;
-  users.extraUsers.lulu.extraGroups = [ "networkmanager" ];
 
   services.xserver.extraConfig = ''
     Section "Device"

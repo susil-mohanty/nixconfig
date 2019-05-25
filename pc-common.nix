@@ -180,6 +180,7 @@ with builtins;
   networking.firewall.allowedTCPPorts = [
     8000  # web server
   ];
+  networking.networkmanager.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -187,7 +188,7 @@ with builtins;
   users.extraUsers.lulu = {
      isNormalUser = true;
      uid = 1000;
-     extraGroups = [ "audio" "wheel" "docker" "dialout" ];
+     extraGroups = [ "audio" "wheel" "docker" "dialout" "networkmanager" ];
      shell = pkgs.fish;
   };
 

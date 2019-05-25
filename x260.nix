@@ -9,7 +9,6 @@
     ];
 
   networking.hostName = "trex";
-  networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
     xorg.xbacklight
@@ -42,7 +41,4 @@
   hardware.trackpoint.sensitivity = 200;
 
   services.xserver.dpi = 113; 
-
-  users.extraUsers.lulu.extraGroups = [ "wheel" "networkmanager" "docker"];
-
 }
