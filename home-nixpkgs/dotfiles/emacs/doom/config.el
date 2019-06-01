@@ -31,6 +31,8 @@
 (evilem-make-motion
  evilem-motion-backward-WORD-begin #'evil-backward-WORD-begin)
 
+(setq evil-snipe-scope 'buffer)
+
 ;; Prevent +write-mode from causing variable pitch fonts in all buffers.
 (defun fix-solaire-mode ()
   (mixed-pitch-mode -1)
