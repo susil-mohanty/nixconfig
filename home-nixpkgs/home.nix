@@ -222,13 +222,6 @@ in
   xsession.windowManager.xmonad.enableContribAndExtras = true;
   xsession.windowManager.xmonad.config = ./dotfiles/xmonad/xmonad.hs;
 
-  services.compton.enable = true;
-  # Prevent lags in urxvt.
-  services.compton.extraOptions = ''
-    xrender-sync = true;
-    xrender-sync-fence = true;
-  '';
-
   systemd.user.services.dropbox = {
     Service = {
       Type = "simple";

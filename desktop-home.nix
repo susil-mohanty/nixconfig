@@ -23,16 +23,8 @@
   services.xserver.videoDrivers = [ "nvidiaBeta" ];  # Required for CUDA apps.
   services.xserver.wacom.enable = true;
 
-  # Prevents most tearing.
-  services.xserver.extraConfig = ''
-    Section "Device"
-        Identifier "Default nvidia Device"
-        Driver	"nvidia"
-        Option	"NoLogo"				"true"
-        Option	"CoolBits"				"24"
-        Option	"ForceFullCompositionPipeline"	"true"
-    EndSection
-  '';
+  # Vsync
+  hardware.nvidia.modesetting.enable = true;
 
   # services.printing.enable = true;
   # services.printing.drivers = [
