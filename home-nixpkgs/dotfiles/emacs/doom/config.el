@@ -1,16 +1,20 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 ;; Global settings (defaults)
-(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-(setq org-directory "~/org/my")
-(setq org-default-notes-file "notes.org")
-(setq org-journal-dir "~/Dropbox/jrn")
-(setq org-journal-date-format "%Y-%m-%d %A")
-(setq org-agenda-files (quote ("~/org/my")))
-(setq evil-escape-key-sequence "hh")
-
-(setq mocha-snippets-use-fat-arrows t)
+(setq
+  dired-dwim-target t
+  doom-themes-enable-bold t
+  doom-themes-enable-italic t
+  evil-escape-key-sequence "hh"
+  evil-snipe-scope 'buffer
+  mocha-snippets-use-fat-arrows t
+  org-agenda-files (quote ("~/org/my"))
+  org-default-notes-file "notes.org"
+  org-directory "~/org/my"
+  org-journal-date-format "%Y-%m-%d %A"
+  org-journal-dir "~/Dropbox/jrn"
+  projectile-project-search-path '("~/r/")
+  )
 
 (add-hook 'js2-mode-hook #'prettier-js-mode)
 (add-hook 'typescript-mode-hook #'prettier-js-mode)
@@ -31,7 +35,6 @@
 (evilem-make-motion
  evilem-motion-backward-WORD-begin #'evil-backward-WORD-begin)
 
-(setq evil-snipe-scope 'buffer)
 
 ;; Prevent +write-mode from causing variable pitch fonts in all buffers.
 (defun fix-solaire-mode ()
