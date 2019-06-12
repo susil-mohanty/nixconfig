@@ -1,8 +1,11 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 ;; Global settings (defaults)
+;;
 
 (setq
   dired-dwim-target t
+  doom-font (font-spec :family "Iosevka"
+                       :size (string-to-number (shell-command-to-string "fontsize")))
   doom-themes-enable-bold t
   doom-themes-enable-italic t
   evil-escape-key-sequence "hh"
