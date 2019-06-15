@@ -85,6 +85,8 @@ in
     onChange = updateDoom;
   };
   home.file.".config/doom/config.el".source = ./dotfiles/emacs/doom/config.el;
+  home.file."bin/org-capture".source = ./doom-emacs/bin/org-capture;
+  home.file.".local/share/applications/emacs-capture.desktop".source = ./dotfiles/emacs/emacs-capture.desktop;
 
   home.file.".config/doom/local/jest.el".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/orther/doom-emacs-private/7abc51ab8f31dd10bbd2ced495297bf2c6be91bb/local/jest.el";

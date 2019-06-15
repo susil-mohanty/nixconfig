@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=emacs-capture
+Exec=emacsclient -s /tmp/emacs1000/server %u
+Icon=emacs-icon
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/org-protocol
+NoDisplay=true
