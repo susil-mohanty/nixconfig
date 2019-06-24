@@ -199,7 +199,7 @@ in
         jre        # for plantuml
         wordnet
         languagetool
-        libvterm   # doesn't work yet
+        pandoc     # markdown preview
       ]);
       postFixup = ''
         wrapProgram $out/bin/emacs --prefix PATH : ${wrapperPath} --set SHELL ${pkgs.bash}/bin/bash

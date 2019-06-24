@@ -16,6 +16,11 @@
   org-directory "~/org/my"
   org-journal-date-format "%Y-%m-%d %A"
   org-journal-dir "~/Dropbox/jrn"
+  org-refile-targets '(("gtd.org" :maxlevel . 3)
+                       ("notes.org" :maxlevel . 2)
+                       ("cognai.org" :maxlevel . 2)
+                       ("someday.org" :level . 1)
+                       ("tickler.org" :maxlevel . 2))
   projectile-project-search-path '("~/r/")
   )
 

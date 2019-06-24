@@ -73,6 +73,7 @@ with builtins;
     jq
     lm_sensors
     nix-index
+    ntfs3g
     nmon
     pass
     ripgrep
@@ -103,7 +104,7 @@ with builtins;
   services.openssh.passwordAuthentication = false;
 
   services.pcscd.enable = true;
-  services.resolved.enable = true;
+  # services.resolved.enable = true;
 
   # very ugly but whatever
   services.autossh.sessions = [{
