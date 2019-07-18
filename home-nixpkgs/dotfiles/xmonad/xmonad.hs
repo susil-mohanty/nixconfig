@@ -5,6 +5,8 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 
+import XMonad.Util.EZConfig
+
 mylayout = spacing 2 $ smartBorders tiled ||| smartBorders Full
   where
      tiled   = Tall nmaster delta ratio
@@ -21,6 +23,7 @@ myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
 
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
 
 myConfig = defaultConfig
     {   modMask = mod4Mask
@@ -39,4 +42,8 @@ myConfig = defaultConfig
       , logHook = dynamicLog
       , layoutHook = mylayout
       , handleEventHook = fullscreenEventHook
-     }
+     } `additionalKeysP`
+    [
+        -- launch rofi with Mod Shift p
+        ("M-S-p", spawn "rofi -show run")
+    ]

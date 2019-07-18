@@ -186,6 +186,7 @@ in
   # };
 
   programs.home-manager.enable = true;
+  programs.rofi.enable = true;
   programs.browserpass.enable = true;
   programs.emacs = {
     enable = true;
