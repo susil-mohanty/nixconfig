@@ -5,7 +5,8 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 
-import XMonad.Util.EZConfig
+import XMonad.Util.EZConfig        -- simpler key bingings
+import XMonad.Hooks.EwmhDesktops   -- window names for rofi
 
 mylayout = spacing 2 $ smartBorders tiled ||| smartBorders Full
   where
@@ -25,7 +26,7 @@ myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 
-myConfig = defaultConfig
+myConfig = ewmh def
     {   modMask = mod4Mask
       ,  workspaces = ["code1", "web", "code2", "code3", "misc1", "misc2"]
       , focusedBorderColor = "#FF5C8F"
@@ -45,5 +46,5 @@ myConfig = defaultConfig
      } `additionalKeysP`
     [
         -- launch rofi with Mod Shift p
-        ("M-S-p", spawn "rofi -show run")
+        ("M-S-p", spawn "rofi -combi-modi window,drun,ssh -show combi -modi combi")
     ]
