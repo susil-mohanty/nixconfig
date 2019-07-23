@@ -3,26 +3,28 @@
 ;;
 
 (setq
-  dired-dwim-target t
-  doom-font (font-spec :family "Iosevka"
-                       :size (string-to-number (shell-command-to-string "fontsize")))
-  doom-themes-enable-bold t
-  doom-themes-enable-italic t
-  evil-escape-key-sequence "hh"
-  evil-snipe-scope 'buffer
-  mocha-snippets-use-fat-arrows t
-  org-agenda-files (quote ("~/org/my"))
-  org-default-notes-file "notes.org"
-  org-directory "~/org/my"
-  org-journal-date-format "%Y-%m-%d %A"
-  org-journal-dir "~/Dropbox/jrn"
-  org-refile-targets '(("gtd.org" :maxlevel . 3)
-                       ("notes.org" :maxlevel . 2)
-                       ("cognai.org" :maxlevel . 2)
-                       ("someday.org" :level . 1)
-                       ("tickler.org" :maxlevel . 2))
-  projectile-project-search-path '("~/r/")
-  )
+ company-idle-delay 0.05
+ dired-dwim-target t
+ doom-font (font-spec :family "Iosevka"
+                      :size (string-to-number (shell-command-to-string "fontsize")))
+ doom-themes-enable-bold t
+ doom-themes-enable-italic t
+ evil-escape-key-sequence "hh"
+ evil-snipe-scope 'buffer
+ ;; lsp-python-ms-dir "/home/lulu/r/Microsoft/python-language-server/output/bin/Release"
+ mocha-snippets-use-fat-arrows t
+ org-agenda-files (quote ("~/org/my"))
+ org-default-notes-file "notes.org"
+ org-directory "~/org/my"
+ org-journal-date-format "%Y-%m-%d %A"
+ org-journal-dir "~/Dropbox/jrn"
+ org-refile-targets '(("gtd.org" :maxlevel . 3)
+                      ("notes.org" :maxlevel . 2)
+                      ("cognai.org" :maxlevel . 2)
+                      ("someday.org" :level . 1)
+                      ("tickler.org" :maxlevel . 2))
+ projectile-project-search-path '("~/r/")
+ )
 
 (add-hook 'js2-mode-hook #'prettier-js-mode)
 (add-hook 'typescript-mode-hook #'prettier-js-mode)
@@ -55,3 +57,12 @@
 (add-hook 'after-save-hook 'magit-after-save-refresh-status)
 (require 'org-protocol)
 
+(add-hook 'lsp-ui-mode-hook
+          (lambda ()
+            (setq lsp-document-highlight-delay 0.05
+                  lsp-ui-doc-delay 0.05
+                  lsp-ui-sideline-delay 0.05
+                  lsp-ui-doc-max-height 8
+                  lsp-ui-doc-max-width 45
+                  lsp-ui-doc-position 'at-point
+                  lsp-ui-doc-enable t)))
