@@ -125,6 +125,8 @@ with builtins;
     fira-code-symbols
     iosevka
 
+    carlito  # ebook font
+
     arphic-ukai
     dejavu_fonts
     emacs-all-the-icons-fonts

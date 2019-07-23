@@ -27,6 +27,7 @@ in
   home.packages = with pkgs; [
     lorri
     ag
+    calibre
     chromium
     clean-nix-store
     discord
