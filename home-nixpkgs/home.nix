@@ -60,6 +60,7 @@ in
     tdesktop
     texstudio
     thefuck
+    tig
     urxvt_perls
     vlc
     weechat
