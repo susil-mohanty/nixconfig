@@ -52,7 +52,6 @@ with builtins;
   };
 
   i18n = {
-     consoleKeyMap = "colemak/colemak";
      defaultLocale = "en_US.UTF-8";
      inputMethod.enabled = "fcitx";
      inputMethod.fcitx.engines = [ pkgs.fcitx-engines.libpinyin ];
@@ -62,6 +61,7 @@ with builtins;
 
   environment.systemPackages = with pkgs; [
     alsaUtils
+
     curl
     direnv
     elvish
@@ -126,6 +126,7 @@ with builtins;
     iosevka
 
     carlito  # ebook font
+    emojione
 
     arphic-ukai
     dejavu_fonts
@@ -140,7 +141,6 @@ with builtins;
 
   services.xserver = {
      enable = true;
-     xkbVariant = "colemak";
 
      displayManager.slim.enable = true;
      displayManager.slim.autoLogin = true;

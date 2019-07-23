@@ -22,11 +22,8 @@ in
   home.sessionVariables.LESS = "-R";
   home.sessionVariables._JAVA_AWT_WM_NONREPARENTING = "1";
 
-  home.keyboard.variant = "colemak";
-
   home.packages = with pkgs; [
     lorri
-    ag
     calibre
     chromium
     clean-nix-store
@@ -38,7 +35,6 @@ in
     feh
     fontsize
     git-sync
-    gmrun
     gnome3.nautilus
     gnome3.dconf
     goldendict
@@ -58,12 +54,11 @@ in
     rxvt_unicode_with-plugins
     spotify
     tdesktop
-    texstudio
     thefuck
     tig
     urxvt_perls
     vlc
-    weechat
+    vscode
     wgetpaste
     wirelesstools
     xclip
