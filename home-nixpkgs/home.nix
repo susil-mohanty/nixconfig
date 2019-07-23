@@ -193,7 +193,8 @@ in
   programs.emacs = {
     enable = true;
 
-    package = pkgs.emacs.overrideAttrs (old: rec {
+    package = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs (old: rec {
+
       wrapperPath = with pkgs; stdenv.lib.makeBinPath ([
         gcc        # to compile emacsql
         aspell
@@ -204,6 +205,17 @@ in
         languagetool
         pandoc     # markdown preview
       ]);
+
+      src = pkgs.fetchFromGitHub {
+        owner = "emacs-mirror";
+        repo = "emacs";
+        rev = "56a3e4a5d366a8453608d9a604ebd5ddb4e52245";
+        sha256 = "09xjq0s7hgw3l2y50kphq5pjzzngwv1d3x7gfarhxbfc9zw9j7s9";
+      };
+
+      # ./clean.env patch fails, stuff still works?
+      patches = [ (builtins.elemAt old.patches 1)];
+
       postFixup = ''
         wrapProgram $out/bin/emacs --prefix PATH : ${wrapperPath} --set SHELL ${pkgs.bash}/bin/bash
       '';
