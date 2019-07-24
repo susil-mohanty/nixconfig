@@ -24,6 +24,8 @@ in
 
   home.packages = with pkgs; [
     lorri
+    aspell
+    aspellDicts.en
     calibre
     chromium
     clean-nix-store
@@ -188,12 +190,17 @@ in
   programs.emacs = {
     enable = true;
 
-    package = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs (old: rec {
+    package = (pkgs.emacs.override {
+      srcRepo = true;
+      # withXwidgets = true;
+    }).overrideAttrs (old: rec {
+
+      version = "27.0";
+      versionModifier = "-dev";
+      name = "emacs-${version}${versionModifier}";
 
       wrapperPath = with pkgs; stdenv.lib.makeBinPath ([
         gcc        # to compile emacsql
-        aspell
-        aspellDicts.en
         plantuml
         jre        # for plantuml
         wordnet
