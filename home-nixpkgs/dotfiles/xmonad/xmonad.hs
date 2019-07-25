@@ -45,6 +45,6 @@ myConfig = ewmh def
       , handleEventHook = fullscreenEventHook
      } `additionalKeysP`
     [
-        -- launch rofi with Mod Shift p
-        ("M-S-p", spawn "rofi -show combi")
+        -- launch rofi with Mod p
+        ("M-p", spawn "rofi -show combi")
     ]
