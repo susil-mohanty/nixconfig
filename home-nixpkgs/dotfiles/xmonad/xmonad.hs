@@ -46,5 +46,5 @@ myConfig = ewmh def
      } `additionalKeysP`
     [
         -- launch rofi with Mod Shift p
-        ("M-S-p", spawn "rofi -combi-modi window,drun,ssh -show combi -modi combi")
+        ("M-S-p", spawn "rofi -show combi")
     ]

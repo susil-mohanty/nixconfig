@@ -63,6 +63,8 @@ in
     vscode
     wgetpaste
     wirelesstools
+    wmctrl
+    wmname
     xclip
     xsel                    # for urxvt copy/paste
   ];
@@ -72,6 +74,8 @@ in
   home.file.".Xresources".source = ./dotfiles/x/xresources;
   home.file.".xmobarrc".source = ./dotfiles/x/xmobarrc;
   home.file.".config/colortheme.Xresources".source = ./dotfiles/x/base16-snazzy-dark.Xresources;
+
+  home.file.".config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
 
   # editors
   home.file.".config/nvim/init.vim".source = ./dotfiles/vim/init.vim;
