@@ -117,7 +117,7 @@ in
   home.file.".config/fish/functions/fish_right_prompt.fish".source = ./dotfiles/fish/functions/fish_right_prompt.fish;
   home.file.".config/fish/functions/fish_title.fish".source = ./dotfiles/fish/functions/fish_title.fish;
 
-  home.file.".config/fish/functions/nix-ipython.fish".source = ./dotfiles/fish/functions/nix-ipython.fish;
+  home.file.".config/fish/functions/ipy.fish".source = ./dotfiles/fish/functions/ipy.fish;
   home.file.".config/fish/functions/py.fish".source = ./dotfiles/fish/functions/py.fish;
   home.file.".config/fish/functions/pless.fish".source = ./dotfiles/fish/functions/pless.fish;
   home.file.".config/fish/functions/wgetpaste.fish".source = ./dotfiles/fish/functions/wgetpaste.fish;
