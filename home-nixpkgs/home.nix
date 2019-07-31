@@ -125,6 +125,8 @@ in
   home.file.".config/fish/functions/fish_greeting.fish".source = ./dotfiles/fish/functions/fish_greeting.fish;
   home.file.".config/fish/functions/ed.fish".source = ./dotfiles/fish/functions/ed.fish;
   home.file.".config/fish/functions/gcl.fish".source = ./dotfiles/fish/functions/gcl.fish;
+  home.file.".config/fish/functions/ns-rev.fish".source = ./dotfiles/fish/functions/ns-rev.fish;
+  home.file.".config/fish/functions/clean-docker.fish".source = ./dotfiles/fish/functions/clean-docker.fish;
 
   # lorri
   home.file.".direnvrc".text = ''
